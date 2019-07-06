@@ -1,32 +1,17 @@
-<!-- # README
+# Список сущностей (объектов реального мира) для проекта TestGuru:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  * Тесты
 
-Things you may want to cover:
+  * Пользователи
 
-* Ruby version
+  * Администраторы (как подвид пользователя)
 
-* System dependencies
+  * Чувак на входе, который будет интересоваться о жизненых убеждениях пришедшего (Аутентификация) 
 
-* Configuration
+  * Ещё один парень, который будет спрашивать какой тест пользователь хочет пройти
 
-* Database creation
+  * Третий чел будет жить в подвале, где храняться тесты, и по требованию давать копии теста
 
-* Database initialization
+  * А работай четвертого будет аккуратно хранить копии пройденых тестов в подписанных именами пользователей папочках
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ... -->
-
-Список сущностей (объектов реального мира) для проекта TestGuru:
-
-  -Тесты
-
-  -Пользователи
-
-  -Администраторы 
+  * Некоторые вещи смотрятся довольно неодекватно при переносе их в реальный мир...
