@@ -1,7 +1,14 @@
 AllCops:
   DisplayCopNames: true
   StyleGuideCopsOnly: true
-  
+  Exclude:
+    - '**/bin/**/*'
+    - '**/db/schema.rb'
+    - '**/db/seeds.rb'
+    - '**/Gemfile'
+    - '**/config/**/*'
+    - '**/test/**/*'
+
 
 Rails:
   Enabled: false
