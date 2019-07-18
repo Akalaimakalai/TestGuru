@@ -25,11 +25,11 @@ user = User.create!(name: "GrowaDK", rang: "noob")
 puts "Created: #{user}"
 
 results = Result.create!([
-  { users_id: user.id, tests_id: tests[0].id },
-  { users_id: user.id, tests_id: tests[1].id },
-  { users_id: user.id, tests_id: tests[4].id },
-  { users_id: user.id, tests_id: tests[3].id },
-  { users_id: user.id, tests_id: tests[7].id }
+  { user_id: user.id, test_id: tests[0].id },
+  { user_id: user.id, test_id: tests[1].id },
+  { user_id: user.id, test_id: tests[4].id },
+  { user_id: user.id, test_id: tests[3].id },
+  { user_id: user.id, test_id: tests[7].id }
 ])
 
 puts "Created: #{results}"
