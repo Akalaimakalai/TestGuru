@@ -7,6 +7,7 @@ AllCops:
     - 'Gemfile'
     - 'config/**/*'
     - 'test/**/*'
+    - '.gitignore'
 
 
 Rails:

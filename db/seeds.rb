@@ -1,35 +1,47 @@
 categories = Category.create!([
-  { title: "Frontend" },
-  { title: "Backend" },
-  { title: "Other" }
+  { title: "Крылатые фразы" }
 ])
 
 puts "Created: #{categories}"
 
+user = User.create!([
+  { name: "GrowaDK", rang: "noob" },
+  { name: "Creater", rang: "author" }
+])
+
+puts "Created: #{user}"
+
 tests = Test.create!([
-  { title: "How to do frontend", level: 0, category_id: categories[0].id },
-  { title: "How to do frontend 2", level: 1, category_id: categories[0].id },
-  { title: "How to do frontend 3", level: 2, category_id: categories[0].id },
-  { title: "How to do Backend", level: 0, category_id: categories[1].id },
-  { title: "How to do Backend 2", level: 1, category_id: categories[1].id },
-  { title: "How to do Backend 3", level: 2, category_id: categories[1].id },
-  { title: "How to do Other", level: 0, category_id: categories[2].id },
-  { title: "How to do Other 2", level: 1, category_id: categories[2].id },
-  { title: "How to do Other 3", level: 2, category_id: categories[2].id }
+  { title: "За 100", level: 0, category_id: categories[0].id, author_id: user[1].id },
+  { title: "За 200", level: 0, category_id: categories[0].id, author_id: user[1].id }
+
 ])
 
 puts "Created: #{tests}"
 
-user = User.create!(name: "GrowaDK", rang: "noob")
-
-puts "Created: #{user}"
-
 results = Result.create!([
-  { user_id: user.id, test_id: tests[0].id },
-  { user_id: user.id, test_id: tests[1].id },
-  { user_id: user.id, test_id: tests[4].id },
-  { user_id: user.id, test_id: tests[3].id },
-  { user_id: user.id, test_id: tests[7].id }
+  { user_id: user[0].id, test_id: tests[0].id }
 ])
 
 puts "Created: #{results}"
+
+questions = Question.create!([
+  { question: 'Продолжите фразу: "Жизнь "', test_id: tests[0].id },
+  { question: '"Я не боюсь того, кто издал 10000 игр я боюсь того, кто переиздал одну игру 10000 раз". О ком это?',
+  test_id: tests[1].id }
+])
+
+puts "Created: #{questions}"
+
+answers = Answer.create!([
+  { body: "прекрасна.", question_id: questions[0].id },
+  { body: "- театр.", question_id: questions[0].id },
+  { body: "как коробка шоколадных конфет.", question_id: questions[0].id },
+  { body: "за Нер'зула!", correct: true, question_id: questions[0].id },
+  { body: "Тодд Говард", correct: true, question_id: questions[1].id },
+  { body: "EA", correct: true, question_id: questions[1].id },
+  { body: "Activision", correct: true, question_id: questions[1].id },
+  { body: "Стив Джексон", correct: true, question_id: questions[1].id }
+])
+
+puts "Created: #{answers}"
