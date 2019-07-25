@@ -3,11 +3,11 @@ AllCops:
   StyleGuideCopsOnly: true
   Exclude:
     - 'bin/**/*'
-    - 'db/schema.rb'
-    - 'db/seeds.rb'
+    - 'db/*.rb'
     - 'Gemfile'
     - 'config/**/*'
     - 'test/**/*'
+    - '.gitignore'
 
 
 Rails:
