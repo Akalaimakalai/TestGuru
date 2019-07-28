@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   def progress(level)
     return tests.where(level: level) if level.class == Integer
-    
+
     Test.send("level_#{level}").where(id: tests.pluck(:id))
   end
 end
