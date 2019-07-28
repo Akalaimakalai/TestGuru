@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :tests, through: :results
 
   def progress(level)
-    tests.where(level: level)
+    return tests.where(level: level) if level.class == Integer
+    
+    Test.send("level_#{level}").where(id: tests.pluck(:id))
   end
 end
