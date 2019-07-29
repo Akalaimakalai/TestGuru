@@ -6,8 +6,6 @@ class User < ApplicationRecord
   validates :email, presence: true
 
   def progress(level)
-    return tests.where(level: level) if level.class == Integer
-
-    Test.send("level_#{level}").where(id: tests.pluck(:id))
+    tests.where(level: level)
   end
 end
