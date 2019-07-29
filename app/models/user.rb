@@ -3,6 +3,8 @@ class User < ApplicationRecord
   has_many :works, class_name: "Test", foreign_key: "author_id"
   has_many :tests, through: :results
 
+  validates :email, presence: true
+
   def progress(level)
     return tests.where(level: level) if level.class == Integer
 
