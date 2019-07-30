@@ -13,8 +13,5 @@ class Test < ApplicationRecord
   scope :level_easy, -> { where(level: (0..1)) }
   scope :level_average, -> { where(level: (2..4)) }
   scope :level_advanced, -> { where(level: (5..Float::INFINITY)) }
-
-  def self.category(title)
-    Category.find_by(title: title).tests.order('title DESC').pluck(:title)
-  end
+  scope :category, -> (title) { Category.find_by(title: title).tests.order('title DESC') }
 end
