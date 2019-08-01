@@ -5,7 +5,13 @@ class Test < ApplicationRecord
   has_many :results, dependent: :destroy
   has_many :users, through: :results
 
-  def self.category(title)
-    Category.find_by(title: title).tests.order('title DESC')
-  end
+  validates :title, presence: true
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :title, uniqueness: { scope: :level, case_sensitive: false }
+
+  scope :level, -> (level) { where(level: level) }
+  scope :level_easy, -> { where(level: (0..1)) }
+  scope :level_average, -> { where(level: (2..4)) }
+  scope :level_advanced, -> { where(level: (5..Float::INFINITY)) }
+  scope :category, -> (title) { joins(:category).where('categories.title = ?', title).order('title DESC') }
 end
