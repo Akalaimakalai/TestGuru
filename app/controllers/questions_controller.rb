@@ -1,48 +1,49 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index]
+  before_action :find_test, only: %i[index create]
+  before_action :find_question, only: %i[show destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    @category = find_test.category.title
+    @category = @test.category.title
     @questions = Question.where(test_id: params[:test_id])
   end
 
   def create
-    question = Question.create!(question_params)
+    @test.questions.create!(question_params)
 
     redirect_to test_questions_path
   end
 
-  def new
-  end
+  def new; end
 
-  def edit
-  end
+  def edit; end
 
   def show
-    render plain: Question.find(params.require(:id)).question
+    render plain: @question.body
   end
 
-  def update
-  end
+  def update; end
 
   def destroy
-    question = Question.find(params[:id])
-    test_id = question.test_id
-    question.destroy
+    @question.destroy
 
-    redirect_to "http://localhost:3000/tests/#{test_id}/questions"
+    redirect_to test_questions_path(test_id: @question.test_id)
   end
 
   private
 
   def question_params
-    params.require(:question).permit(:question, :test_id)
+    params.permit(:body, :test_id)
+    # без permit'а не обошлось, иначе возвращается массив, а не хеш.
   end
 
   def find_test
-    Test.find(params[:test_id])
+    @test = Test.find(params[:test_id])
+  end
+
+  def find_question
+    @question = Question.find(params[:id])
   end
 
   def rescue_with_question_not_found

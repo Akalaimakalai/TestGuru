@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2019_07_29_151926) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.text "question", null: false
+    t.text "body", null: false
     t.bigint "test_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
