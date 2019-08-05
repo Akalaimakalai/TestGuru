@@ -4,15 +4,12 @@ class QuestionsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def index
-    @category = @test.category.title
-    @questions = Question.where(test_id: params[:test_id])
-  end
+  def index; end
 
   def create
     @test.questions.create!(question_params)
 
-    redirect_to test_questions_path
+    redirect_to test_questions_path(@test)
   end
 
   def new; end
@@ -28,14 +25,13 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
 
-    redirect_to test_questions_path(test_id: @question.test_id)
+    redirect_to test_questions_path(@question.test)
   end
 
   private
 
   def question_params
-    params.permit(:body, :test_id)
-    # без permit'а не обошлось, иначе возвращается массив, а не хеш.
+    params.require(:question).permit(:body)
   end
 
   def find_test
