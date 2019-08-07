@@ -1,0 +1,23 @@
+<h1>All tests</h1>
+<%= link_to 'New test', new_test_path %>
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Title</th>
+    <th>Level</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% Test.all.each do |test| %>
+    <tr>
+      <td><%= test.category.title %></td>
+      <td><%= test.title %></td>
+      <td><%= test.level %></td>
+      <td><%= link_to 'Show', test_path(test) %></td>
+      <td><%= link_to 'Edit', edit_test_path(test) %></td>
+      <td><%= link_to 'Destroy', test_path(test),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,19 @@
+<h1>Please, correct test</h1>
+<%= form_with model: @test do |test| %>
+  <%= test.label("Category:") %>
+  <%= test.text_field :category_id %>
+  <p></p>
+  <%= test.label("Title:") %>
+  <%= test.text_field :title %>
+  <p></p>
+  <%= test.label("Level:") %>
+  <%= test.text_field :level %>
+  <p></p> 
+  <%= test.label("Author:") %>
+  <%= test.text_field :author_id %>
+  <p></p>
+  <%= test.submit "Update" %>
+<% end %>
+<br>
+
+<%= link_to 'Back', tests_path %>
