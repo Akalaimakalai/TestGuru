@@ -17,8 +17,9 @@
   <p>Краткое описание проекта.</p>
   <p>
     Проект создаётся в рамках курса "Основы Rails" онлайн школы 
-    <a href = "https://thinknetica.com" target="_blank">Thinknetika</a>.
-    Название проекта: <a href = "https://github.com/Akalaimakalai/TestGuru" target="_blank">TestGuru</a>.
+    <%= git_sauce "https://thinknetica.com", 'Thinknetika' %>.
+    Название проекта:
+    <%= git_sauce "https://github.com/Akalaimakalai/TestGuru", 'TestGuru' %>.
   </p>
   <p>
     Его основные заачи:
@@ -27,8 +28,8 @@
     <li>управление тестами</li>
     <li>прохождение тестов</li>
    </ul>
-   <a href = "https://github.com/Akalaimakalai" target="_blank">Akalaimakalai</a>
-   <%= Time.now.year %>
+   <%= git_sauce "https://github.com/Akalaimakalai", 'Akalaimakalai' %>
+   <%= today_year %>
   </p>
   </footer>
 </html>
