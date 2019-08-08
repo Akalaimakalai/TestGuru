@@ -7,17 +7,8 @@
     <th colspan="3"></th>
   </tr>
 
-  <% @test.questions.each do |question| %>
-    <tr>
-      <td><%= question.body %></td>
-      <td><%= link_to 'Show', question_path(question) %></td>
-      <td><%= link_to 'Edit', edit_question_path(question) %></td>
-      <td><%= link_to 'Destroy', question_path(question),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
+  <%= render @questions %>
 </table>
 <br>
 
-<%= link_to 'Back', tests_path %>
+<%= link_to 'All tests', tests_path %>

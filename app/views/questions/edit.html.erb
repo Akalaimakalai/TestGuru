@@ -1,14 +1,2 @@
 <h1>Please, correct question</h1>
-
-<%= form_with(url: question_path(@question), method: "put") do %>
-  <%= label_tag(:question, "Question:") %>
-  <br>
-  <%= text_area(:question, :body) %>
-  <br>
-  <%= submit_tag("Update") %>
-<% end %>
-
-<br>
-
-<%= link_to 'Back', test_questions_path(@question.test) %>
-
+<%= render 'form', material: @question %>

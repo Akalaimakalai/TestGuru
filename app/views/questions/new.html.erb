@@ -1,12 +1,2 @@
 <h1>Create new question</h1>
-<%= form_with(url: test_questions_path(@test), method: "post") do %>
-  <%= label_tag(:question, "Question:") %>
-  <br>
-  <%= text_area(:question, :body) %>
-  <br>
-  <%= submit_tag("Create") %>
-<% end %>
-
-<br>
-
-<%= link_to 'Back', test_questions_path(@test) %>
+<%= render 'form', material: [@test, @question] %>
