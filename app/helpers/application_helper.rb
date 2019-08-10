@@ -3,7 +3,7 @@ module ApplicationHelper
     Time.current.year
   end
 
-  def git_sauce(author, repo)
+  def git_url(author, repo)
     link_to "#{repo}", "https://github.com/#{author}/#{repo}", target: "_blank"
   end
 end
