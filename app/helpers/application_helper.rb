@@ -1,9 +1,9 @@
 module ApplicationHelper
   def today_year
-    Time.now.year
+    Time.current.year
   end
 
-  def git_sauce(link, link_title)
-    link_to link_title, link, target: "_blank"
+  def git_sauce(author, repo)
+    link_to "#{repo}", "https://github.com/#{author}/#{repo}", target: "_blank"
   end
 end

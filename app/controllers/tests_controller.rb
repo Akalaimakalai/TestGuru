@@ -22,7 +22,7 @@ class TestsController < ApplicationController
   def edit; end
 
   def show
-    redirect_to test_questions_path(@test)
+    @questions = @test.questions
   end
 
   def update

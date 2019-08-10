@@ -1,0 +1,16 @@
+<h1><%= @question.test.category.title%> <%= @question.test.title%></h1>
+<p>
+<h2><%= @question.body %></h2>
+<table>
+  <% @answers.each do |answer| %>
+    <tr>
+    <th>
+      <%= answer.body%>
+      <%= check_box_tag answer.body %>
+    </th>
+    </tr>
+  <% end %>
+</table>
+<%= submit_tag "Confirm" %>
+</p>
+<%= link_to 'Back', test_path(@question.test) %>
