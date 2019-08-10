@@ -1,10 +1,11 @@
-<h1><%= @question.test.category.title%> <%= @question.test.title%></h1>
+<h1><%= @question.test.category.title %> <%= @question.test.title %></h1>
 <p>
 <h2><%= @question.body %></h2>
-<%= form_with model: @question do |answers| %>
-  <p>
-  <%= answers.collection_select(:answer, @question.answers, :correct, :body) %>
-  </p>
-  <%= answers.submit 'Confirm' %>
+<ul>
+<% @question.answers.each do |answer| %>
+  <li>
+    <%= answer.body %>
+  </li>
 <% end %>
+</ul>
 <%= link_to 'Back', test_path(@question.test) %>

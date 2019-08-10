@@ -22,9 +22,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
   end
 
-  def show
-    @answers = @question.answers
-  end
+  def show; end
 
   def update
     if @question.update(question_params)
