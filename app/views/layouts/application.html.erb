@@ -12,4 +12,24 @@
   <body>
     <%= yield %>
   </body>
+
+  <footer>
+  <p>Краткое описание проекта.</p>
+  <p>
+    Проект создаётся в рамках курса "Основы Rails" онлайн школы 
+    <%= link_to 'Thinknetika', "https://thinknetica.com", target: "_blank" %>.
+    Название проекта:
+    <%= git_url "Akalaimakalai", 'TestGuru' %>.
+  </p>
+  <p>
+    Его основные заачи:
+  <ul>
+    <li>создание тестов</li>
+    <li>управление тестами</li>
+    <li>прохождение тестов</li>
+   </ul>
+   <%= link_to 'Akalaimakalai', "https://github.com/Akalaimakalai", target: "_blank" %>
+   <%= today_year %>
+  </p>
+  </footer>
 </html>

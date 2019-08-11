@@ -1,0 +1,10 @@
+<%= form_with model: [@test, @question], local: true do |question| %>
+  <%= render 'shared/errors', resource: @question %>
+  <p><%= question.label :question%></p>
+  <p><%= question.text_area :body %></p>
+  <%= question.submit %>
+<% end %>
+
+<br>
+
+<%= link_to 'Back', test_path(@question.test) %>
