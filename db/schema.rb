@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2019_08_13_115524) do
     t.bigint "test_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "current_question", default: 0
+    t.integer "correct_questions", default: 0
     t.bigint "current_question_id"
     t.index ["current_question_id"], name: "index_results_on_current_question_id"
     t.index ["test_id"], name: "index_results_on_test_id"
