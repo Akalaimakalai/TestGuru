@@ -6,6 +6,7 @@ class ResultsController < ApplicationController
   end
 
   def resume
+    @percent = (@test_passage.correct_questions.to_f / @test_passage.test.questions.count.to_f) * 100
   end
 
   def update
@@ -22,5 +23,6 @@ class ResultsController < ApplicationController
 
   def set_test_passage
     @test_passage = Result.find(params[:id])
+    @test_passage.q_number ||= 1
   end
 end
