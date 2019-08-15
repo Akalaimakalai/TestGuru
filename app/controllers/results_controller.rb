@@ -10,13 +10,19 @@ class ResultsController < ApplicationController
   end
 
   def update
-    @test_passage.accept!(params[:answer_ids])
-
-    if @test_passage.completed?
-      redirect_to resume_result_path(@test_passage)
-    else
+    if params[:answer_ids].nil?
       set_q_number
       render :show
+    else
+
+      @test_passage.accept!(params[:answer_ids])
+
+      if @test_passage.completed?
+        redirect_to resume_result_path(@test_passage)
+      else
+        set_q_number
+        render :show
+      end
     end
   end
 
@@ -28,6 +34,6 @@ class ResultsController < ApplicationController
 
   def set_q_number
     @arr = @test_passage.test.questions.order(id: :asc).pluck(:id)
-    @q_number = @arr.find_index(@test_passage.current_question.id) + 1 
+    @q_number = @arr.find_index(@test_passage.current_question.id) + 1
   end
 end
