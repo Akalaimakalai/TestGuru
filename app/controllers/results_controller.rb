@@ -1,8 +1,8 @@
 class ResultsController < ApplicationController
-
   before_action :set_test_passage, only: %i[ show update resume ]
 
   def show
+    set_q_number
   end
 
   def resume
@@ -15,6 +15,7 @@ class ResultsController < ApplicationController
     if @test_passage.completed?
       redirect_to resume_result_path(@test_passage)
     else
+      set_q_number
       render :show
     end
   end
@@ -23,6 +24,10 @@ class ResultsController < ApplicationController
 
   def set_test_passage
     @test_passage = Result.find(params[:id])
-    @test_passage.q_number ||= 1
+  end
+
+  def set_q_number
+    @arr = @test_passage.test.questions.order(id: :asc).pluck(:id)
+    @q_number = @arr.find_index(@test_passage.current_question.id) + 1 
   end
 end

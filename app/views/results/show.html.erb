@@ -1,7 +1,7 @@
 <h1>Pass the <%= @test_passage.test.title %> Test</h1>
 
 <b>
-  Question №<%= @test_passage.q_number %> out of <%= @test_passage.test.questions.count %><br>
+  Question №<%= @q_number %> out of <%= @test_passage.test.questions.count %><br>
   <%= @test_passage.current_question.body %>
 </b>
 
