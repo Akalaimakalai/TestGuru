@@ -7,9 +7,9 @@ Rails.application.routes.draw do
       resources :answers, shallow: true, except: :index
     end
 
-    member do
-      post :start
-    end
+    
+    post :start, on: :member
+
   end
 
   resources :results, only: %i[ show update] do 

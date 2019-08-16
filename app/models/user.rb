@@ -9,7 +9,7 @@ class User < ApplicationRecord
     tests.where(level: level)
   end
 
-  def test_passage(test)
-    results.order(id: :desc).find_by(test_id: test.id)
+  def result(test)
+    results.order(id: :desc).find_by(test: test)
   end
 end

@@ -1,12 +1,14 @@
-<h1>Pass the <%= @test_passage.test.title %> Test</h1>
+<h1>Pass the <%= @result.test.title %> Test</h1>
+
+<% @result.set_q_number %>
 
 <b>
-  Question №<%= @q_number %> out of <%= @test_passage.test.questions.count %><br>
-  <%= @test_passage.current_question.body %>
+  Question №<%= @result.q_number %> out of <%= @result.test.questions.count %><br>
+  <%= @result.current_question.body %>
 </b>
 
-<%= form_with url: result_path(@test_passage), local: true, method: :put do |form| %>
-  <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id,
+<%= form_with url: result_path(@result), local: true, method: :put do |form| %>
+  <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id,
                                   :body, include_hidden: false do |b| %>
     <p>
       <%= b.check_box  id: "answer_ids_#{b.object.id}" %>
