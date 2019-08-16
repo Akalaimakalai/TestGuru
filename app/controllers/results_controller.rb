@@ -14,7 +14,7 @@ class ResultsController < ApplicationController
       redirect_to resume_result_path(@result)
     else
       render :show
-    end 
+    end
   end
 
   private

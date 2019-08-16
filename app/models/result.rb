@@ -28,7 +28,7 @@ class Result < ApplicationRecord
   end
 
   def set_q_number
-    @q_number = self.test.questions.order(id: :asc).pluck(:id).find_index(self.current_question.id) + 1
+    @q_number = test.questions.count - test.questions.order(:id).where('id > ?', current_question.id).count
   end
 
   private
@@ -42,7 +42,7 @@ class Result < ApplicationRecord
   end
 
   def before_validation_set_current_question
-    if self.current_question.nil?
+    if current_question.nil?
       self.current_question = test.questions.first if test.present?
     else
       self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
