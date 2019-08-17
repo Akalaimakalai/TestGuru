@@ -5,7 +5,6 @@ class Result < ApplicationRecord
 
   before_validation :before_validation_set_current_question
 
-  attr_reader :percent
   attr_reader :q_number
 
   def accept!(answer_ids)
@@ -19,22 +18,21 @@ class Result < ApplicationRecord
   end
 
   def pass?
-    calculate_result
-    if @percent >= 85
-      true
-    else
-      false
-    end
+    calculate_result >= 85
   end
 
   def set_q_number
     @q_number = test.questions.count - test.questions.order(:id).where('id > ?', current_question.id).count
   end
 
+  def calculate_result
+    (self.correct_questions.to_f / self.test.questions.count.to_f) * 100
+  end
+
   private
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    (!answer_ids.nil?) && (correct_answers.ids.sort == Array(answer_ids).map(&:to_i).sort)
   end
 
   def correct_answers
@@ -42,14 +40,10 @@ class Result < ApplicationRecord
   end
 
   def before_validation_set_current_question
-    if current_question.nil?
+    if new_record?
       self.current_question = test.questions.first if test.present?
     else
       self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
     end
-  end
-
-  def calculate_result
-    @percent = (self.correct_questions.to_f / self.test.questions.count.to_f) * 100
   end
 end

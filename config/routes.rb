@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   end
 
   resources :results, only: %i[ show update] do
-    get :resume, on: :member
+    get :final, on: :member
   end
 end
