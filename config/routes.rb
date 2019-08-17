@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
+  root "tests#index"
+
   resources :tests do
-    resources :questions, except: :index, shallow: true
+    resources :questions, shallow: true, except: :index  do
+      resources :answers, shallow: true, except: :index
+    end
+    post :start, on: :member
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :results, only: %i[ show update] do
+    get :final, on: :member
+  end
 end

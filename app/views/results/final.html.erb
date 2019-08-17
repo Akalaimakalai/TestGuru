@@ -1,0 +1,7 @@
+<h1>The <%= @result.test.title %> Test was completed!</h1>
+  <% if @result.pass? %>
+    <%= render 'success' %>
+  <% else %>
+    <%= render 'fail' %>
+  <% end %>
+<%= link_to 'Complete', root_path %>

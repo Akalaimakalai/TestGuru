@@ -8,4 +8,8 @@ class User < ApplicationRecord
   def progress(level)
     tests.where(level: level)
   end
+
+  def result(test)
+    results.order(id: :desc).find_by(test: test)
+  end
 end
