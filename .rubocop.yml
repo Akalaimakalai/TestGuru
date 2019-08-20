@@ -30,3 +30,6 @@ Metrics/ModuleLength:
 
 Metrics/AbcSize:
   Max: 20
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
