@@ -1,6 +1,6 @@
 <% if resource.errors.present? %>
     <div>
-      <h2><%= pluralize(resource.errors.count, 'error') %> detedted:</h2>
+      <h3><%= pluralize(resource.errors.count, 'error') %> detedted:</h3>
 
       <ul>
         <% resource.errors.full_messages.each do |message| %>

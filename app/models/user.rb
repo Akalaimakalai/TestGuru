@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :works, class_name: "Test", foreign_key: "author_id"
   has_many :tests, through: :results
 
+  validates :email, format: /@/, uniqueness: true, case_sensitive: false
+
   has_secure_password
 
   def progress(level)

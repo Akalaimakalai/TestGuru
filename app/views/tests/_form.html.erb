@@ -1,12 +1,9 @@
 <%= form_with model: @test, local: true do |test| %>
   <%= render 'shared/errors', resource: @test %>
+  <input id="test_author_id" type="hidden" name="test[author_id]" value = "<%= @user.id %>">
   <p>
     <%= test.label :category_id %>:
     <%= test.collection_select :category_id, Category.all, :id, :title, prompt: true %>
-  </p>
-  <p>
-    <%= test.label :author_id %>:
-    <%= test.collection_select :author_id, User.all, :id, :name, prompt: true %>
   </p>
   <p> 
     <%= test.label :title %>

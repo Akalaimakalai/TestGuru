@@ -10,9 +10,23 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <p class="nav user">Welcome, <b><%= current_user.email %></b> Guru</p>
-    <% end %>
+    <nav class="hat">
+      <h1><%= link_to TestGuru, root_path %></h1>
+
+      <% if logged_in? %>
+        <nav class="user">
+          Welcome, <b><%= current_user.name %></b> Guru |
+          <%= link_to 'Exit', session_path(session),
+                              method: :delete,
+                              data: { confirm: 'Are you sure?' } %>
+        </nav>
+      <% else %>
+        <p>
+          <%= link_to 'Registrate', signup_path %> | 
+          <%= link_to 'Login', login_path %>
+        </p>
+      <% end %>
+    </nav>
 
     <%= yield %>
   </body>

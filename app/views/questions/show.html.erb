@@ -1,9 +1,9 @@
-<h1><%= @question.test.category.title %> <%= @question.test.title %></h1>
+<h2><%= @question.test.category.title %> <%= @question.test.title %></h2>
 <p>
-<h2><%= @question.body %></h2>
+<h3><%= @question.body %></h3>
 </p>
 
-<h3>Answers</h2>
+<h4>Answers</h4>
 
 <%= link_to 'New answer', new_question_answer_path(@question) %>
 
