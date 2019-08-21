@@ -16,7 +16,7 @@
       <% if logged_in? %>
         <nav class="user">
           Welcome, <b><%= current_user.name %></b> Guru |
-          <%= link_to 'Exit', session_path(session),
+          <%= link_to 'Exit', logout_path,
                               method: :delete,
                               data: { confirm: 'Are you sure?' } %>
         </nav>
