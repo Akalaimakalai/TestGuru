@@ -3,12 +3,9 @@ Rails.application.routes.draw do
   root 'sessions#new'
 
   get :signup, to: 'users#new'
+  post :signup, to: 'users#create'
   get :login, to: 'sessions#new'
-  get :sessions, to: 'sessions#new'
-  get :users, to: 'users#new'
-
-  resources :users, only: :create
-  resources :sessions, only: :create
+  post :login, to: 'sessions#create'
 
   delete :logout, to: 'sessions#destroy'
 
