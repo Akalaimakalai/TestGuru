@@ -5,8 +5,8 @@ categories = Category.create!([
 puts "Created: #{categories}"
 
 user = User.create!([
-  { name: "GriwaDK", rang: "noob", email: "GriwaDK@yandex.xxx", password: "qwerty" },
-  { name: "Creater", rang: "author", email: "Lord@google.com", password: "qwerty" }
+  { name: "GriwaDK", email: "GriwaDK@yandex.xxx", password: "qwerty" },
+  { name: "Creater", email: "Lord@google.com", password: "qwerty" }
 ])
 
 puts "Created: #{user}"
