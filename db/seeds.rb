@@ -6,7 +6,7 @@ puts "Created: #{categories}"
 
 user = User.create!([
   { name: "GriwaDK", email: "GriwaDK@yandex.xxx", password: "qwerty" },
-  { name: "Creater", email: "Lord@google.com", password: "qwerty" }
+  { name: "Creater", email: "Lord@google.com", password: "qwerty", first_name: "Ivan", last_name: "Vvalenkah" }
 ])
 
 puts "Created: #{user}"

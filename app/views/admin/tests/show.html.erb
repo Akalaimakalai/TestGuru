@@ -7,8 +7,9 @@
     <th colspan="3"></th>
   </tr>
 
-  <%= render @questions %>
+  <% # = render @questions %>
+  <%= render partial: 'questions/question', collection: @questions %>
 </table>
 <br>
 
-<%= link_to 'All tests', tests_path %>
+<%= link_to 'All tests', admin_tests_path %>
