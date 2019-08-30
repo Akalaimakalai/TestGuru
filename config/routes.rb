@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
   root 'tests#index'
-  get '/admin/tests' => "admin/tests#index", :as => :admin
-  get '/tests' => "tests#index", :as => :user
 
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout },
                      controllers: { registrations: 'users/registrations' }
