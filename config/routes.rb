@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root 'tests#index'
 
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout },
-                     controllers: { registrations: 'users/registrations' }
+                     controllers: { registrations: 'users/registrations',
+                                    sessions: 'users/sessions' }
 
   resources :tests, only: :index do
     post :start, on: :member

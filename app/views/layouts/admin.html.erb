@@ -15,7 +15,7 @@
 
       <% if user_signed_in? %>
         <nav class="user">
-          Welcome, <b><%= current_user.name %></b> Guru |
+          Welcome, <b><%= current_user.nickname %></b> Guru |
           <%= link_to 'Logout', destroy_user_session_path,
                               method: :delete,
                               data: { confirm: 'Are you sure?' } %>
