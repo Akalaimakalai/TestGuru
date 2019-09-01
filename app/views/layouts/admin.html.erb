@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Panel | TestGuru</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="hat">
+      <h1><%= link_to TestGuru, admin_tests_path %></h1>
+
+      <% if user_signed_in? %>
+        <nav class="user">
+          Welcome, <b><%= current_user.nickname %></b> Guru |
+          <%= link_to 'Logout', destroy_user_session_path,
+                              method: :delete,
+                              data: { confirm: 'Are you sure?' } %>
+        </nav>
+      <% else %>
+        <p>
+          <%= link_to 'Registrate', new_user_registration_path %> | 
+          <%= link_to 'Login', user_session_path %>
+        </p>
+      <% end %>
+    </nav>
+
+    <%= render 'admin/nav' %>
+    <%= render 'shared/flash' %>
+
+    <%= yield %>
+  </body>
+
+  <footer>
+  <p>Краткое описание проекта.</p>
+  <p>
+    Проект создаётся в рамках курса "Основы Rails" онлайн школы 
+    <%= link_to 'Thinknetika', "https://thinknetica.com", target: "_blank" %>.
+    Название проекта:
+    <%= git_url "Akalaimakalai", 'TestGuru' %>.
+  </p>
+  <p>
+    Его основные заачи:
+  <ul>
+    <li>создание тестов</li>
+    <li>управление тестами</li>
+    <li>прохождение тестов</li>
+   </ul>
+   <%= link_to 'Akalaimakalai', "https://github.com/Akalaimakalai", target: "_blank" %>
+   <%= today_year %>
+  </p>
+  </footer>
+</html>
