@@ -43,6 +43,9 @@ gem "nokogiri", ">= 1.10.4"
 # AUTH
 gem 'devise', '~> 4.0'
 
+# LOCALIZATION
+gem 'rails-i18n', '~> 5.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
