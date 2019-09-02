@@ -1,11 +1,23 @@
 en:
   activerecord:
     models:
+      admin: "Admin"
+      answer: "Answer"
+      category: "Category"
+      question: "Question"
+      result: "Result"
       test: "Test"
+      user: "User"
 
     attributes:
+      answer:
+        body: "Body"
+        correct: "Correct"
       test:
         title: "Title"
+        level: "Level"
+        category_id: "Category"
+        author_id: "Author"
 
     errors:
       messages:

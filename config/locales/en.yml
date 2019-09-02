@@ -32,31 +32,47 @@
 en:
   hello: "Hello world"
 
+  users:
+    sessions:
+      create:
+        greetings: "Greetings, %{first_name} %{last_name}!"
+
   helpers:
     submit:
       test:
         create: "Create test"
         update: "Update test"
+      user:
+        create: "Enter"
     label:
       test:
         title: "Title"
         level: "Level"
         category_id: "Category"
-
-  admin:
-    tests:
-      index:
-        header: "All tests"
-      create:
-        success: "Test was successfully created."
+      user:
+        email: "Email"
+        password: "Password"
+        remember_me: "Remember me"
 
   tests:
     index:
       header: "All tests"
+      category: "Category"
+      title: "Title"
+      level: "Level"
+      questions: "Questions"
+      new_test: "New test"
+    test:
+      button_to: "Start"
 
   results:
     final:
       header: "The %{title} test was completed!"
+      complete: "Complete"
+    show:
+      header: "Pass the %{test_title} Test"
+      question: "Question №%{q_number} out of %{q_count}"
+      next: 'Next'
 
   shared:
     errors:
@@ -66,5 +82,5 @@ en:
 
   tests_mailer:
     completed_test:
-      subject: "You just completed the TestGuru test!"
+      subject: "You just completed the TestGuru test!" 
     

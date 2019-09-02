@@ -1,31 +1,46 @@
 ru:
   hello: "Привет, Мир!"
 
+  users:
+    sessions:
+      create:
+        greetings: "Приветствую тебя, %{first_name} %{last_name}!"
+
   helpers:
     submit:
       test:
         create: "Создать тест"
         update: "Обновить тест"
+      user:
+        create: "Войти"
     label:
       test:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
-
-  admin:
-    tests:
-      index:
-        header: "Все тесты"
-      create:
-        success: "Тест был успешно создан."
+      user:
+        email: "Эл. почта"
+        password: "Пароль"
+        remember_me: "Запомнить"
 
   tests:
     index:
       header: "Все тесты"
+      category: "Категория"
+      title: "Название"
+      level: "Уровень"
+      questions: "Вопросов"
+    test:
+      button_to: "Пройти"
 
   results:
     final:
-      header: "Тест %{title} успешно завершёл!"
+      header: "Тест %{title} успешно завершён!"
+      complete: "Завершить"
+    show:
+      header: "Проходим тест: %{test_title}"
+      question: "Вопрос №%{q_number} из %{q_count}"
+      next: 'Следующий'
 
   shared:
     errors:

@@ -1,11 +1,26 @@
 ru:
   activerecord:
     models:
+      admin: "Администратор"
+      answer: "Ответ"
+      category: "Категория"
+      question: "Вопрос"
+      result: "Результат"
       test: "Тест"
+      user: "Пользователь"
 
     attributes:
+      answer:
+        body: "Содержание"
+        correct: "Правильный"
       test:
         title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+        author_id: "Автор"
+        category: "Категория"
+      question:
+        body: "Содержание"
 
     errors:
       messages:

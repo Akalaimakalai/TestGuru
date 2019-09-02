@@ -1,3 +1,5 @@
-<h2>Edit, <%= @test.title %> test</h2>
+<h2><%= t('.header', title: @test.title) %></h2>
 
 <%= render 'form' %>
+
+<%= link_to t('.all_tests'), admin_tests_path %>
