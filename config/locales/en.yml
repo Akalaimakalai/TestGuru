@@ -53,6 +53,8 @@ en:
         email: "Email"
         password: "Password"
         remember_me: "Remember me"
+    select:
+      prompt: "Choose category"
 
   tests:
     index:

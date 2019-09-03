@@ -8,11 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options
-    if I18n.locale != I18n.default_locale
-      { lang: I18n.locale }
-    else
-      {}
-    end
+    { lang: (I18n.locale if I18n.locale != I18n.default_locale) }
   end
 
   private
