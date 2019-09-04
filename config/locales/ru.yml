@@ -1,0 +1,57 @@
+ru:
+  hello: "Привет, Мир!"
+
+  users:
+    sessions:
+      create:
+        greetings: "Приветствую тебя, %{first_name} %{last_name}!"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+      user:
+        create: "Войти"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+      user:
+        email: "Эл. почта"
+        password: "Пароль"
+        remember_me: "Запомнить"
+    select:
+      prompt: "Укажите категорию:"
+
+  tests:
+    index:
+      header: "Все тесты"
+      category: "Категория"
+      title: "Название"
+      level: "Уровень"
+      questions: "Вопросов"
+    test:
+      button_to: "Пройти"
+
+  results:
+    final:
+      header: "Тест %{title} успешно завершён!"
+      complete: "Завершить"
+    show:
+      header: "Проходим тест: %{test_title}"
+      question: "Вопрос №%{q_number} из %{q_count}"
+      next: 'Следующий'
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"

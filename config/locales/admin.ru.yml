@@ -1,0 +1,69 @@
+ru:
+  admin:
+
+    answers:
+      answer:
+        show: "Показать"
+        edit: "Редактировать"
+        destroy: "Удалить"
+        confirm: "Вы уверены?"
+      edit:
+        header: "Добавить ответ"
+        back: "Назад"
+      new:
+        header: "Новый ответ"
+        back: "Назад"
+      show:
+        header: "Ответ"
+        answer: "Ответ"
+        correct: "Правильный"
+        back: "Назад"
+
+    questions:
+      question:
+        show: "Показать"
+        edit: "Редактировать"
+        destroy: "Удалить"
+        confirm: "Вы уверены?"
+      edit:
+        header: "Редактируем вопрос из теста %{test_title}"
+        back: "Назад"
+      new:
+        header: "Создаём новый вопрос для теста %{test_title}"
+        back: "Назад"
+      show:
+        header: "%{category} %{title}"
+        answers: "Ответы"
+        new_answer: "Добавить ответ"
+        edit: "Редактировать"
+        back: "Назад"
+  
+    tests:
+      test:
+        show: "Показать"
+        edit: "Редактировать"
+        destroy: "Удалить"
+        confirm: "Вы уверены?"
+      edit:
+        header: "Редактируем тест %{title}"
+        all_tests: "Все тесты"
+      index:
+        header: "Все тесты"
+        category: "Категория"
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросов"
+        new_test: "Новый тест"
+      new:
+        new_test: "Новый тест"
+        all_tests: "Все тесты" 
+      show:
+        header: "%{category} %{title}"
+        new_question: "Новый вопрос"
+        question: "Вопросы"
+        all_tests: "Все тесты"    
+      create:
+        success: "Тест был успешно создан."
+
+    nav:
+      header: "Панель администратора TestGuru"

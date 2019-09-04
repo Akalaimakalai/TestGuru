@@ -1,7 +1,7 @@
-<h2>The <%= @result.test.title %> Test was completed!</h2>
+<h2><%= t('.header', title: @result.test.title) %></h2>
   <% if @result.pass? %>
     <%= render 'success' %>
   <% else %>
     <%= render 'fail' %>
   <% end %>
-<%= link_to 'Complete', root_path %>
+<%= link_to t('.complete'), root_path %>

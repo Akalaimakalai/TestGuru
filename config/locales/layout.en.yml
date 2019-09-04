@@ -1,0 +1,18 @@
+en:
+  layouts:
+
+    admin:
+      head_title: "Admin Panel | TestGuru"
+      welcome: "Welcome %{guru_name} Guru"
+      logout: "Logout"
+      confirm: "Are you sure?"
+      registrate: "Registrate"
+      login: "Login"
+
+    application:
+      head_title: "TestGuru"
+      welcome: "Welcome %{guru_name} Guru"
+      logout: "Logout"
+      confirm: "Are you sure?"
+      registrate: "Registrate"
+      login: "Login"
