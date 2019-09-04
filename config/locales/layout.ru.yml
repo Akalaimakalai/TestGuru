@@ -3,14 +3,13 @@ ru:
 
     admin:
       head_title: "Панель администратора | TestGuru"
-      welcome: "Добро пожаловать %{guru_name}"
-      logout: "Выход"
-      confirm: "Вы уверены?"
-      registrate: "Регистрация"
-      login: "Войти"
+      
 
     application:
       head_title: "TestGuru"
+
+  shared:
+    nav:
       welcome: "Добро пожаловать %{guru_name}"
       logout: "Выход"
       confirm: "Вы уверены?"

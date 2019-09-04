@@ -42,8 +42,6 @@ en:
       test:
         create: "Create test"
         update: "Update test"
-      user:
-        create: "Enter"
     label:
       test:
         title: "Title"

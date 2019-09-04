@@ -11,8 +11,6 @@ ru:
       test:
         create: "Создать тест"
         update: "Обновить тест"
-      user:
-        create: "Войти"
     label:
       test:
         title: "Название"

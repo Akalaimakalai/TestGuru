@@ -1,0 +1,18 @@
+<nav class="navbar navbar-light bg-light">
+  <h1><%= link_to TestGuru, root_path, class: "navbar-brand" %></h1>
+
+  <span class="navbar-text">
+
+    <% if user_signed_in? %>
+        <%= t('.welcome', guru_name: current_user.nickname) %> |
+        <%= link_to t('.logout'), destroy_user_session_path,
+                            method: :delete,
+                            data: { confirm: t('.confirm') } %>
+    <% else %>
+      <p>
+        <%= link_to t('.registrate'), new_user_registration_path %> | 
+        <%= link_to t('.login'), user_session_path %>
+      </p>
+    <% end %>
+  </span>
+</nav>
