@@ -13,13 +13,15 @@
   </head>
 
   <body>
+    <div style="min-height: 100%">
    
-    <%= render 'shared/nav' %>
-    <%= render 'admin/nav' %>
-      
-    <div class="container">
-      <%= render 'shared/flash' %>
-      <%= yield %>
+      <%= render 'shared/nav' %>
+      <%= render 'admin/nav' %>
+        
+      <div class="container">
+        <%= render 'shared/flash' %>
+        <%= yield %>
+      </div>
     </div>
 
     <footer>
