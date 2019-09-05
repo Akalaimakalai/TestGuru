@@ -1,5 +1,11 @@
-<h2><%= t('.new_test') %></h2>
+<div class="row justify-content-center mt-3">
 
-<%= render 'form' %>
+  <h2><%= t('.new_test') %></h2>
+  <div class="w-100"></div>
 
-<%= link_to t('.all_tests'), admin_tests_path %>
+  <div class="col col-md-3">
+    <%= render 'form' %>
+
+    <%= link_to t('.all_tests'), admin_tests_path %>
+  </div>
+</div>

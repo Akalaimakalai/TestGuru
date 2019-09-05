@@ -1,5 +1,5 @@
 <tr>
-  <td><%= test.category.title %></td>
+  <th scope="row"><%= test.category.title %></td>
   <td><%= test.title %></td>
   <td><%= test.level %></td>
   <td><%= test.questions.count %></td>
@@ -9,4 +9,3 @@
                    method: :delete,
                    data: { confirm: t('.confirm') } %></td>
 </tr>
-<tr>

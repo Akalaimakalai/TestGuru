@@ -8,13 +8,13 @@ ru:
         destroy: "Удалить"
         confirm: "Вы уверены?"
       edit:
-        header: "Добавить ответ"
+        header: "Реактировать ответ"
         back: "Назад"
       new:
         header: "Новый ответ"
         back: "Назад"
       show:
-        header: "Ответ"
+        header: "Вопрос"
         answer: "Ответ"
         correct: "Правильный"
         back: "Назад"
@@ -33,7 +33,6 @@ ru:
         back: "Назад"
       show:
         header: "%{category} %{title}"
-        answers: "Ответы"
         new_answer: "Добавить ответ"
         edit: "Редактировать"
         back: "Назад"

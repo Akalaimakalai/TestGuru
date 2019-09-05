@@ -16,6 +16,7 @@
     <div style="min-height: 100%">
 
       <%= render 'shared/nav' %>
+      <%= render 'admin/nav' if current_user.present? && current_user.admin? %>
       
       <div class="container text-center w-50 p-3" >
         <%= render 'shared/flash' %>

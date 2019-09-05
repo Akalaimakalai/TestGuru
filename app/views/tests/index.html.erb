@@ -4,19 +4,17 @@
   </div>
   <div class="w-100"></div>
 
-      <table class="table table-striped table-sm">
-        <thead>
-          <tr>  
-            <th scope="col"><%= t('.category') %></th>
-            <th scope="col"><%= t('.title') %></th>
-            <th scope="col"><%= t('.level') %></th>
-            <th scope="col"><%= t('.questions') %></th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>  
+        <th scope="col"><%= t('.category') %></th>
+        <th scope="col"><%= t('.title') %></th>
+        <th scope="col"><%= t('.level') %></th>
+        <th scope="col"><%= t('.questions') %></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
 
-      <%= render @tests %>
-    </table>
-
-  </div>
+    <%= render @tests %>
+  </table>
 </div>
