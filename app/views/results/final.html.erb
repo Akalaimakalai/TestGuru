@@ -1,7 +1,15 @@
-<h2><%= t('.header', title: @result.test.title) %></h2>
-  <% if @result.pass? %>
-    <%= render 'success' %>
-  <% else %>
-    <%= render 'fail' %>
-  <% end %>
-<%= link_to t('.complete'), root_path %>
+<div class="row justify-content-center mt-3 text-center">
+  <div class="col col-md-6">
+    <h2><%= t('.header', title: @result.test.title) %></h2>
+
+    <div class="row justify-content-center mt-5 text-center">
+      <div class="col col-md-8">
+        <% if @result.pass? %>
+          <%= render 'success' %>
+        <% else %>
+          <%= render 'fail' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

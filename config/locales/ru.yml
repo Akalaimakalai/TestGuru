@@ -35,8 +35,7 @@ ru:
 
   results:
     final:
-      header: "Тест %{title} успешно завершён!"
-      complete: "Завершить"
+      header: "Тест %{title} завершён!"
     show:
       header: "Проходим тест: %{test_title}"
       question: "Вопрос №%{q_number} из %{q_count}"

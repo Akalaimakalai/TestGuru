@@ -1,6 +1,8 @@
-<div id="success">  
-  <p>
-    Поздравляем! Вы набрали <%= @result.calculate_result %>%<br>
-    Тест успешно пройден!
-  </p>
+<p class="text-success">
+  Поздравляем! Вы набрали <%= @result.calculate_result %>%<br>
+  Тест успешно пройден!
+</p>
+
+<div class="row justify-content-center mt-5 text-center">
+  <%= link_to 'Изи', root_path, class:"btn btn-success" %>
 </div>

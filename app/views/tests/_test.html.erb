@@ -1,8 +1,8 @@
 <tr>
-  <td><%= test.category.title %></td>
+  <th scope="row"><%= test.category.title %></td>
   <td><%= test.title %></td>
   <td><%= test.level %></td>
   <td><%= test.questions.count %></td>
-  <td><%= button_to t('.button_to'), start_test_path(test) %></td>
+  <td><%= button_to t('.button_to'), start_test_path(test), class: "btn btn-success" %></td>
 </tr>
 <tr>

@@ -68,7 +68,6 @@ en:
   results:
     final:
       header: "The %{title} test was completed!"
-      complete: "Complete"
     show:
       header: "Pass the %{test_title} Test"
       question: "Question №%{q_number} out of %{q_count}"
