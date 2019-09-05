@@ -21,7 +21,7 @@ ru:
         password: "Пароль"
         remember_me: "Запомнить"
     select:
-      prompt: "Укажите категорию:"
+      prompt: "Выберите"
 
   tests:
     index:

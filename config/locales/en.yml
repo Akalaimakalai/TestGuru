@@ -52,7 +52,7 @@ en:
         password: "Password"
         remember_me: "Remember me"
     select:
-      prompt: "Choose category"
+      prompt: "Choose any"
 
   tests:
     index:
