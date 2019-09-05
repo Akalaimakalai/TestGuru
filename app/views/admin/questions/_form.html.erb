@@ -1,5 +1,9 @@
 <%= form_with model: [:admin, @test, @question], local: true do |question| %>
-  <%= render 'shared/errors', resource: @question %>
+  <div class="row text-left">
+    <div class="col">
+      <%= render "devise/shared/error_messages", resource: @question %>
+     </div>
+  </div>
   
   <p><%= question.text_area :body %></p>
   <%= question.submit %>

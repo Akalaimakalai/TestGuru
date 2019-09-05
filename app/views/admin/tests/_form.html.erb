@@ -1,5 +1,9 @@
 <%= form_with model: [:admin, @test], local: true do |test| %>
-  <%= render 'shared/errors', resource: @test %>
+  <div class="row text-left">
+    <div class="col">
+      <%= render "devise/shared/error_messages", resource: @test %>
+     </div>
+  </div>
   
   <p>
     <%= test.label :category_id %>:
