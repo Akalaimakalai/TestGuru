@@ -26,33 +26,7 @@
       </div>
     </div>
 
-    <footer>
-      <div class="container text-muted">
-        <div class="row">
-          <div class="col-md-auto">
-            <p>Краткое описание проекта.</p>
-            <p>
-              Проект создаётся в рамках курса "Основы Rails" онлайн школы 
-              <%= link_to 'Thinknetika', "https://thinknetica.com", target: "_blank" %>.<br>
-              Название проекта:
-              <%= git_url "Akalaimakalai", 'TestGuru' %>.
-            </p>
-          </div>
-          <div class="col-md-auto">
-                Его основные задачи:
-              <ul>
-                <li>создание тестов</li>
-                <li>управление тестами</li>
-                <li>прохождение тестов</li>
-              </ul>
-          </div>
-          <div class="w-100"></div>
-          <div class="col-md-auto">
-              <%= link_to 'Akalaimakalai', "https://github.com/Akalaimakalai", target: "_blank" %>
-              <%= today_year %>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <%= render 'shared/footer' %>
+    
   </body>
 </html>
