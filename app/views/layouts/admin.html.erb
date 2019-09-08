@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title><%= t('.head_title') %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,47 +13,20 @@
   </head>
 
   <body>
-    <nav class="hat">
-      <h1><%= link_to TestGuru, admin_tests_path %></h1>
+    <div style="min-height: 100%">
+   
+      <%= render 'shared/nav' %>
+      <%= render 'admin/nav' %>
+        
+      <div class="container text-center w-50 p-3" >
+        <%= render 'shared/flash' %>
+      </div>
+      <div class="container" style="min-height: 500px;">
+        <%= yield %>
+      </div>
+    </div>
 
-      <% if user_signed_in? %>
-        <nav class="user">
-          <%= t('.welcome', guru_name: current_user.nickname) %> |
-          <%= link_to t('.logout'), destroy_user_session_path,
-                              method: :delete,
-                              data: { confirm: t('.confirm') } %>
-        </nav>
-      <% else %>
-        <p>
-          <%= link_to t('.registrate'), new_user_registration_path %> | 
-          <%= link_to t('.login'), user_session_path %>
-        </p>
-      <% end %>
-    </nav>
-
-    <%= render 'admin/nav' %>
-    <%= render 'shared/flash' %>
-
-    <%= yield %>
+    <%= render 'shared/footer' %>
+    
   </body>
-
-  <footer>
-  <p>Краткое описание проекта.</p>
-  <p>
-    Проект создаётся в рамках курса "Основы Rails" онлайн школы 
-    <%= link_to 'Thinknetika', "https://thinknetica.com", target: "_blank" %>.
-    Название проекта:
-    <%= git_url "Akalaimakalai", 'TestGuru' %>.
-  </p>
-  <p>
-    Его основные заачи:
-  <ul>
-    <li>создание тестов</li>
-    <li>управление тестами</li>
-    <li>прохождение тестов</li>
-   </ul>
-   <%= link_to 'Akalaimakalai', "https://github.com/Akalaimakalai", target: "_blank" %>
-   <%= today_year %>
-  </p>
-  </footer>
 </html>

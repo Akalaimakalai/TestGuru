@@ -11,8 +11,6 @@ ru:
       test:
         create: "Создать тест"
         update: "Обновить тест"
-      user:
-        create: "Войти"
     label:
       test:
         title: "Название"
@@ -23,7 +21,7 @@ ru:
         password: "Пароль"
         remember_me: "Запомнить"
     select:
-      prompt: "Укажите категорию:"
+      prompt: "Выберите"
 
   tests:
     index:
@@ -37,8 +35,7 @@ ru:
 
   results:
     final:
-      header: "Тест %{title} успешно завершён!"
-      complete: "Завершить"
+      header: "Тест %{title} завершён!"
     show:
       header: "Проходим тест: %{test_title}"
       question: "Вопрос №%{q_number} из %{q_count}"

@@ -13,7 +13,7 @@ en:
         header: "New answer"
         back: "Back"
       show:
-        header: "Answer"
+        header: "Question"
         answer: "Answer"
         correct: "Correct"
         back: "Back"
@@ -32,7 +32,6 @@ en:
         back: "Back"
       show:
         header: "%{category} %{title}"
-        answers: "Answers"
         new_answer: "New answer"
         edit: "Edit"
         back: "Back" 

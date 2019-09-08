@@ -21,6 +21,13 @@ ru:
         category: "Категория"
       question:
         body: "Содержание"
+      user:
+        nickname: "Псевдоним"
+        first_name: "Имя"
+        last_name: "Фамилия"
+        email: "Эл. почта"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
 
     errors:
       messages:

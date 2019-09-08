@@ -42,8 +42,6 @@ en:
       test:
         create: "Create test"
         update: "Update test"
-      user:
-        create: "Enter"
     label:
       test:
         title: "Title"
@@ -54,7 +52,7 @@ en:
         password: "Password"
         remember_me: "Remember me"
     select:
-      prompt: "Choose category"
+      prompt: "Choose any"
 
   tests:
     index:
@@ -70,7 +68,6 @@ en:
   results:
     final:
       header: "The %{title} test was completed!"
-      complete: "Complete"
     show:
       header: "Pass the %{test_title} Test"
       question: "Question №%{q_number} out of %{q_count}"
