@@ -19,10 +19,7 @@ module ApplicationHelper
       alert: "danger"
     }
 
-    if keys[key.to_sym].nil?
-      key
-    else
-      keys[key.to_sym]
-    end
+    return key if keys[key.to_sym].nil?
+    keys[key.to_sym]
   end
 end
