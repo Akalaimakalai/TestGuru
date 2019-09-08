@@ -4,10 +4,11 @@
   <span class="navbar-text">
 
     <% if user_signed_in? %>
+        <%= link_to t('.panel'), admin_tests_path, class: "text-primary" if current_user.admin?%>
         <%= t('.welcome', guru_name: current_user.nickname) %> |
         <%= link_to t('.logout'), destroy_user_session_path,
                             method: :delete,
-                            data: { confirm: t('.confirm') } %>
+                            data: { confirm: t('.confirm') } %>     
     <% else %>
       <p>
         <%= link_to t('.registrate'), new_user_registration_path %> | 

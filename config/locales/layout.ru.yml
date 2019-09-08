@@ -12,6 +12,7 @@ ru:
     nav:
       welcome: "Добро пожаловать %{guru_name}"
       logout: "Выход"
+      panel: "Панель администратора"
       confirm: "Вы уверены?"
       registrate: "Регистрация"
       login: "Войти"

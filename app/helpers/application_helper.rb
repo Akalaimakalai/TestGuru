@@ -12,4 +12,17 @@ module ApplicationHelper
       content_tag :p, flash[type.to_sym], class: "flash #{type}"
     end
   end
+
+  def key_hash(key)
+    keys = {
+      notice: "primary",
+      alert: "danger"
+    }
+
+    if keys[key.to_sym].nil?
+      key
+    else
+      keys[key.to_sym]
+    end
+  end
 end
