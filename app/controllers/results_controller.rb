@@ -19,7 +19,8 @@ class ResultsController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@result.current_question).call
+    result = GistQuestionService.new(@result.current_question,
+    client: Octokit::Client.new(access_token: '0cd5257617f66bf192af118baa91155ea7c7f8bd')).call
 
     flash_options = if result.success?
       { notice: t('.success') }
