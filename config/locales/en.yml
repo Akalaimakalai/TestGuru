@@ -72,6 +72,10 @@ en:
       header: "Pass the %{test_title} Test"
       question: "Question №%{q_number} out of %{q_count}"
       next: 'Next'
+    gist:
+      success: "Gist was succesfully created!"
+      failure: "An error occurred while saving gist"
+
 
   shared:
     errors:

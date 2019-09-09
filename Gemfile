@@ -46,6 +46,9 @@ gem 'devise', '~> 4.0'
 # LOCALIZATION
 gem 'rails-i18n', '~> 5.1'
 
+#NETWORKING
+gem 'faraday'
+
 #UI
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'

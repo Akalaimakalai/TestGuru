@@ -40,6 +40,9 @@ ru:
       header: "Проходим тест: %{test_title}"
       question: "Вопрос №%{q_number} из %{q_count}"
       next: 'Следующий'
+    gist:
+      success: "Gist успешно сохранён!"
+      failure: "Во время сохранения gist произошла ошибка"
 
   shared:
     errors:
