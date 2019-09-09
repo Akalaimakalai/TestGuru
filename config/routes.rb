@@ -6,12 +6,16 @@ Rails.application.routes.draw do
                      controllers: { registrations: 'users/registrations',
                                     sessions: 'users/sessions' }
 
+  devise_scope :user do
+    get '/gurus', to: 'users/registrations#new'
+  end
+
   resources :tests, only: :index do
     post :start, on: :member
   end
 
   resources :results, only: %i[ show update] do
-    member do 
+    member do
       get :final
       post :gist
     end
