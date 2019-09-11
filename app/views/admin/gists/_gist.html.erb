@@ -1,0 +1,10 @@
+<tr>
+  <th scope="row">
+    <%= link_to gist.question.body.truncate(25), admin_question_path(gist.question) %>
+  </th>
+  <td><%= link_to gist.url_id, "https://gist.github.com/Akalaimakalai/#{gist.url_id}", target:"_blank" %></td>
+  <td><%= gist.user.email %></td>
+  <td><%= link_to t('.destroy'), admin_gist_path(gist),
+                                     method: :delete,
+                                     data: { confirm: t('.confirm') } %></td>
+</tr>

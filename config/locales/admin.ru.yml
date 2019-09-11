@@ -66,3 +66,11 @@ ru:
 
     nav:
       header: "Панель администратора TestGuru"
+
+    gists:
+      gist:
+        destroy: "Удалить"
+        confirm: "Вы уверены?"
+      index:
+        question: "Вопрос"
+        creater: "Создатель"
