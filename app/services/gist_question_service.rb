@@ -8,7 +8,15 @@ class GistQuestionService
 
   def call
     @client.create_gist(gist_params)
-    @client.last_response
+
+    responce = ClientResponce.new(@client.last_response.status, @client.last_response.data.id,
+                                  @client.last_response.data.html_url)
+  end
+
+  ClientResponce = Struct.new(:status, :id, :html_url) do
+    def success?
+      return true if status == 201
+    end
   end
 
   private
