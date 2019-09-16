@@ -33,17 +33,20 @@
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
           </div>
 
-          <div class="field">
+          <div class="field comparing-main">
             <%= f.label :password %>
             <% if @minimum_password_length %>
             <em>(<%= t('.char_min') %>: <%= @minimum_password_length %>)</em>
             <% end %><br />
             <%= f.password_field :password, autocomplete: "new-password" %>
+            <%= octicon "check", class: 'text-success hide' %>
           </div>
 
-          <div class="field">
+          <div class="field comparing-sub">
             <%= f.label :password_confirmation %><br />
             <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+            <%= octicon "check", class: 'text-success hide' %>
+            <%= octicon "circle-slash", class: 'text-danger hide' %>
           </div>
 
           <div class="actions mt-3">
