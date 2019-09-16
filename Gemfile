@@ -46,6 +46,12 @@ gem 'devise', '~> 4.0'
 # LOCALIZATION
 gem 'rails-i18n', '~> 5.1'
 
+#NETWORKING
+gem 'faraday'
+
+#GitClient
+gem "octokit", "~> 4.0"
+
 #UI
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'
@@ -64,6 +70,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'letter_opener'
+
+  #ENV_VARIABLES
+  gem 'dotenv-rails'
 end
 
 group :test do

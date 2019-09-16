@@ -72,6 +72,11 @@ en:
       header: "Pass the %{test_title} Test"
       question: "Question №%{q_number} out of %{q_count}"
       next: 'Next'
+    gist:
+      success: "Gist was succesfully created!"
+      failure: "An error occurred while saving gist"
+      here: "=>Here<="
+
 
   shared:
     errors:
@@ -81,5 +86,9 @@ en:
 
   tests_mailer:
     completed_test:
-      subject: "You just completed the TestGuru test!" 
+      subject: "You just completed the TestGuru test!"
+
+  services:
+    gist_question_service:
+      discription: "A question about %{test_title} from TestGuru"
     

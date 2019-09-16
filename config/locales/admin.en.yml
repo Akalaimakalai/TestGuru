@@ -63,4 +63,12 @@ en:
         success: "Test was successfully created."
 
     nav:
-      header: "TestGuru Admin Panel"   
+      header: "TestGuru Admin Panel"
+
+    gists:
+      gist:
+        destroy: "Delete"
+        confirm: "Are you sure?"
+      index:
+        question: "Question"
+        creater: "Creater"

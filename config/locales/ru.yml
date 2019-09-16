@@ -40,6 +40,10 @@ ru:
       header: "Проходим тест: %{test_title}"
       question: "Вопрос №%{q_number} из %{q_count}"
       next: 'Следующий'
+    gist:
+      success: "Gist успешно сохранён!"
+      failure: "Во время сохранения gist произошла ошибка"
+      here: "=>Здесь<="
 
   shared:
     errors:
@@ -52,3 +56,7 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
+
+  services:
+    gist_question_service:
+      discription: "Вопрос из теста %{test_title} от TestGuru"
