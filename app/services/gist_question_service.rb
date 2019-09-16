@@ -15,7 +15,7 @@ class GistQuestionService
 
   ClientResponce = Struct.new(:status, :id, :html_url) do
     def success?
-      return true if status == 201
+      status == 201
     end
   end
 
