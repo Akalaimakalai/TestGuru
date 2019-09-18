@@ -1,7 +1,10 @@
-div#success {
-  color: green
+#myProgress {
+  width: 100%;
+  background-color: grey;
 }
 
-div#fail {
-  color: red
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: green;
 }
