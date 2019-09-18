@@ -2,7 +2,10 @@
   <h2><%= t('.header', category: @test.category.title, title: @test.title) %></h2>
   <div class="w-100"></div>
 
-    <%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
+    <p>
+      <%= link_to t('.new_question'), new_admin_test_question_path(@test) %> | 
+      <%= link_to t('.edit'), edit_admin_test_path(@test) %>
+    </p>
     <table class="table">
       <thead>
         <tr>
