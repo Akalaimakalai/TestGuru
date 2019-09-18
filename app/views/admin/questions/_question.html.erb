@@ -1,8 +1,8 @@
 <tr>
-  <th scope="row"><%= question.body %></th>
-  <td><%= link_to t('.show'), admin_question_path(question) %></td>
-  <td><%= link_to t('.edit'), edit_admin_question_path(question) %></td>
-  <td><%= link_to t('.destroy'), admin_question_path(question),
+  <th scope="row" class="align-middle"><%= question.body %></th>
+  <td class="align-middle"><%= link_to t('.show'), admin_question_path(question) %></td>
+  <td class="align-middle"><%= link_to t('.edit'), edit_admin_question_path(question) %></td>
+  <td class="align-middle"><%= link_to t('.destroy'), admin_question_path(question),
                              method: :delete,
                              data: { confirm: t('.confirm') } %></td>
 </tr>

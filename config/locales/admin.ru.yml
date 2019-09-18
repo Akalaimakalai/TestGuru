@@ -63,6 +63,8 @@ ru:
         all_tests: "Все тесты"    
       create:
         success: "Тест был успешно создан."
+      form_inline:
+        submit: "OK"
 
     nav:
       header: "Панель администратора TestGuru"
