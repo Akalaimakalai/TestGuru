@@ -8,6 +8,6 @@ document.addEventListener('turbolinks:load', function(){
 
 function move() {
   var elem = document.getElementById("myBar"); 
-  var width = document.querySelector('.barrgot[data-width="start"]').textContent;
+  var width = document.querySelector('.barrgot').dataset.width;
   elem.style.width = width; 
 }

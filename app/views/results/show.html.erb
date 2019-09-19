@@ -8,7 +8,7 @@
       <%= t('.question', q_number: @result.q_number, q_count: @result.test.questions.count) %>
       <div id="myProgress">
         <div id="myBar">
-          <%= content_tag :span, @result.calculate_percent, class: "barrgot", data: { width: "start" } %>
+          <%= content_tag :span, @result.calculate_percent, class: "barrgot", data: { width: @result.calculate_percent } %>
         </div>
       </div> 
       <br>
