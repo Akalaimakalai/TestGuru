@@ -26,7 +26,7 @@ class Result < ApplicationRecord
   end
 
   def calculate_result
-    (self.correct_questions.to_f / self.test.questions.count.to_f) * 100
+    ((self.correct_questions.to_f / self.test.questions.count.to_f) * 100).round(1)
   end
 
   def calculate_percent
