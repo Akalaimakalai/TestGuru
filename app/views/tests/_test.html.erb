@@ -1,7 +1,7 @@
 <tr>
-  <th scope="row"><%= test.category.title %></th>
-  <td><%= test.title %></td>
-  <td><%= test.level %></td>
-  <td><%= test.questions.count %></td>
-  <td><%= button_to t('.button_to'), start_test_path(test), class: "btn btn-success" %></td>
+  <th scope="row" class="align-middle"><%= test.category.title %></th>
+  <td class="align-middle"><%= test.title %></td>
+  <td class="align-middle"><%= test.level %></td>
+  <td class="align-middle"><%= test.questions.count %></td>
+  <td class="align-middle"><%= button_to t('.button_to'), start_test_path(test), class: "btn btn-success" %></td>
 </tr>

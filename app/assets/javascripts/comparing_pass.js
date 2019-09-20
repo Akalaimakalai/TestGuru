@@ -1,7 +1,9 @@
 document.addEventListener('turbolinks:load', function() {
   var target = document.querySelector('.comparing-sub');
 
-  target.addEventListener('input', conpareInput);
+  if (target){
+    target.addEventListener('input', conpareInput);
+  };
 });
 
 function conpareInput() {

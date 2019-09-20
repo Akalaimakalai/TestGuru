@@ -60,9 +60,12 @@ ru:
         header: "%{category} %{title}"
         new_question: "Новый вопрос"
         question: "Вопросы"
-        all_tests: "Все тесты"    
+        all_tests: "Все тесты"
+        edit: "Редактировать Тест"
       create:
         success: "Тест был успешно создан."
+      form_inline:
+        submit: "OK"
 
     nav:
       header: "Панель администратора TestGuru"

@@ -58,9 +58,12 @@ en:
         header: "%{category} %{title}"
         new_question: "New question"
         question: "Question"
-        all_tests: "All tests" 
+        all_tests: "All tests"
+        edit: "Edit test"
       create:
         success: "Test was successfully created."
+      form_inline:
+        submit: "OK"
 
     nav:
       header: "TestGuru Admin Panel"

@@ -29,6 +29,11 @@ class Result < ApplicationRecord
     (self.correct_questions.to_f / self.test.questions.count.to_f) * 100
   end
 
+  def calculate_percent
+    percent = ((@q_number - 1).to_f / test.questions.count.to_f) * 100
+    "#{percent.to_i}%"
+  end
+
   private
 
   def correct_answer?(answer_ids)
