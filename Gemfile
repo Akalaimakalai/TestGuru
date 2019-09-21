@@ -41,7 +41,7 @@ gem 'pg'
 gem "nokogiri", ">= 1.10.4"
 
 # AUTH
-gem 'devise', '~> 4.0'
+gem "devise", ">= 4.7.1"
 
 # LOCALIZATION
 gem 'rails-i18n', '~> 5.1'

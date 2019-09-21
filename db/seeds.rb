@@ -4,25 +4,23 @@ categories = Category.create!([
 
 puts "Created: #{categories}"
 
-user = User.create!([
-  { nickname: "GriwaDK", email: "GriwaDK@yandex.xxx", password: "qwerty",
-    first_name: "Ivan", last_name: "Vvalenkah" },
-  { nickname: "Creater", email: "Lord@google.com", password: "qwerty",
-    first_name: "Fed'ka", last_name: "Svali", type: "Admin" }
+users = User.create!([
+  { nickname: "AdminAcc", email: "jackshaakara@gmail.com", password: "qwerty",
+    first_name: "Ivan", last_name: "Vvalenkah", type: "Admin" },
 ])
 
-puts "Created: #{user}"
+puts "Created: #{users}"
 
 tests = Test.create!([
-  { title: "За 100", level: 0, category: categories[0], author: user[1] },
-  { title: "За 200", level: 0, category: categories[0], author: user[1] }
+  { title: "За 100", level: 0, category: categories[0], author: users[0] },
+  { title: "За 200", level: 0, category: categories[0], author: users[0] }
 
 ])
 
 puts "Created: #{tests}"
 
 results = Result.create!([
-  { user: user[0], test: tests[0] }
+  { user: users[0], test: tests[0] }
 ])
 
 puts "Created: #{results}"
