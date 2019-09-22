@@ -1,5 +1,6 @@
 class Admin::TestsController < Admin::BaseController
 
+  before_action :update_inline_redirect, only: %i[ update_inline ]
   before_action :set_tests, only: %i[ index update_inline ]
   before_action :find_test, only: %i[ edit show update update_inline destroy ]
 
@@ -59,5 +60,9 @@ class Admin::TestsController < Admin::BaseController
 
   def test_params
     params.require(:test).permit(:category_id, :title, :level, :author_id)
+  end
+
+  def update_inline_redirect
+    redirect_to admin_tests_path unless params["test"]
   end
 end
