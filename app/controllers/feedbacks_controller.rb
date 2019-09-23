@@ -10,6 +10,7 @@ class FeedbacksController < ApplicationController
     @feedback = current_user.feedbacks.new(feedback_params)
 
     if @feedback.save
+      FeedbacksMailer.feedback_created(@feedback).deliver_now
       redirect_to tests_path
     else
       render :new
