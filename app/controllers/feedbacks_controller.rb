@@ -2,12 +2,14 @@ class FeedbacksController < ApplicationController
 
   before_action :authenticate_user!
 
-  def new; end
+  def new
+    @feedback = Feedback.new
+  end
 
   def create
-    current_user.feedbacks.new(feddback_params)
+    @feedback = current_user.feedbacks.new(feedback_params)
 
-    if @test.save
+    if @feedback.save
       redirect_to tests_path
     else
       render :new
@@ -16,7 +18,7 @@ class FeedbacksController < ApplicationController
 
   private
 
-  def feddback_params
+  def feedback_params
     params.require(:feedback).permit(:body)
   end
 end
