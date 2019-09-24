@@ -5,6 +5,6 @@ class FeedbacksMailer < ApplicationMailer
   def feedback_created(feedback)
     @feedback = feedback
 
-    mail
+    mail subject: "New feedback from: #{@feedback.from}", from: @feedback.email
   end
 end
