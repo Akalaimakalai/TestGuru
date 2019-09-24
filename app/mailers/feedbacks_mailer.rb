@@ -5,6 +5,6 @@ class FeedbacksMailer < ApplicationMailer
   def feedback_created(feedback)
     @feedback = feedback
 
-    mail from: @feedback.email
+    mail
   end
 end
