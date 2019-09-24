@@ -1,23 +1,17 @@
 <%= form_with model: @feedback, local: true do |feedback| %>
-  <div class="row text-left">
-    <div class="col">
-      <%= render "devise/shared/error_messages", resource: @feedback %>
-    </div>
-  </div>
-
   <p>
     <%= feedback.label :from %>:<br>
-    <%= current_user.nickname %>
+    <%= feedback.text_field :from, id: :feedback_from %>
   </p>
 
   <p>
     <%= feedback.label :email %>:<br>
-    <%= current_user.email %>
+    <%= feedback.text_field :email, id: :feedback_email %>
   </p>
 
   <p>
     <%= feedback.label :body %>:<br>
-    <%= feedback.text_area :body, id: :answer_body, rows: 5, cols: 30 %>
+    <%= feedback.text_area :body, id: :feedback_body, rows: 5, cols: 30 %>
   </p>
 
   <p><%= feedback.submit %></p>

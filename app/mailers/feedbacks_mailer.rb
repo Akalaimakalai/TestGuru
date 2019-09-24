@@ -1,9 +1,11 @@
 class FeedbacksMailer < ApplicationMailer
 
+  default to: 'jackshaakara@gmail.com',
+          from: @feedback.email
+
   def feedback_created(feedback)
     @feedback = feedback
-    @user = feedback.user
 
-    mail to: 'jackshaakara@gmail.com'
+    mail
   end
 end
