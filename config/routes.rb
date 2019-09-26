@@ -34,5 +34,6 @@ Rails.application.routes.draw do
     end
 
     resources :gists, shallow: true, only: %i[ index destroy ]
+    resources :bages, shallow: true
   end
 end
