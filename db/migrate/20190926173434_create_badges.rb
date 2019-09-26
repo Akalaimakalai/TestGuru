@@ -9,5 +9,6 @@ class CreateBadges < ActiveRecord::Migration[5.2]
     end
 
     add_index :badges, :title, unique: true
+    add_belongs_to :results, :badge
   end
 end

@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 2019_09_26_173434) do
     t.datetime "updated_at", null: false
     t.integer "correct_questions", default: 0
     t.bigint "current_question_id"
+    t.bigint "badge_id"
+    t.index ["badge_id"], name: "index_results_on_badge_id"
     t.index ["current_question_id"], name: "index_results_on_current_question_id"
     t.index ["test_id"], name: "index_results_on_test_id"
     t.index ["user_id"], name: "index_results_on_user_id"
