@@ -14,14 +14,15 @@ Rails.application.routes.draw do
     post :start, on: :member
   end
 
-  resources :results, only: %i[ show update] do
+  resources :results, only: %i[ show update ] do
     member do
       get :final
       post :gist
     end
   end
 
-  resources :feedbacks, only: %i[ new create]
+  resources :feedbacks, only: %i[ new create ]
+  resources :badges, only: %i[ index ]
 
   namespace :admin do
     resources :tests do

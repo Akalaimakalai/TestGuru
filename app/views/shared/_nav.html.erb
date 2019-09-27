@@ -1,6 +1,10 @@
 <nav class="navbar navbar-light bg-light">
   <h1><%= link_to TestGuru, root_path, class: "navbar-brand" %></h1>
 
+  <div class="row justify-content-center mt-3 text-center">
+    <%= t('.welcome', guru_name: current_user.nickname) %>
+  </div>
+
   <span class="navbar-text">
 
     <% if user_signed_in? %>
@@ -9,10 +13,12 @@
       <% else %>
         <%= link_to 'обратная связь', new_feedback_path, class: "text-primary" %>
       <% end %>
-        <%= t('.welcome', guru_name: current_user.nickname) %> |
-        <%= link_to t('.logout'), destroy_user_session_path,
-                            method: :delete,
-                            data: { confirm: t('.confirm') } %>     
+      <br>
+      <%= link_to 'медальки', badges_path %>
+      <br>
+      <%= link_to t('.logout'), destroy_user_session_path,
+                                method: :delete,
+                                data: { confirm: t('.confirm') } %> 
     <% else %>
       <p>
         <%= link_to 'обратная связь', new_feedback_path, class: "text-primary" %> | 
