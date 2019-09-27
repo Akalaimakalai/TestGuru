@@ -1,13 +1,12 @@
 <nav class="navbar navbar-light bg-light">
   <h1><%= link_to TestGuru, root_path, class: "navbar-brand" %></h1>
 
-  <div class="row justify-content-center mt-3 text-center">
-    <%= t('.welcome', guru_name: current_user.nickname) %>
-  </div>
+  <% if user_signed_in? %>
+    <div class="row justify-content-center mt-3 text-center">
+      <%= t('.welcome', guru_name: current_user.nickname) %>
+    </div>
 
-  <span class="navbar-text">
-
-    <% if user_signed_in? %>
+    <span class="navbar-text">
       <% if current_user.admin? %>
         <%= link_to t('.panel'), admin_tests_path, class: "text-primary" %>
       <% else %>
@@ -18,13 +17,15 @@
       <br>
       <%= link_to t('.logout'), destroy_user_session_path,
                                 method: :delete,
-                                data: { confirm: t('.confirm') } %> 
-    <% else %>
+                                data: { confirm: t('.confirm') } %>
+    </span>
+  <% else %>
+    <span class="navbar-text">
       <p>
         <%= link_to 'обратная связь', new_feedback_path, class: "text-primary" %> | 
         <%= link_to t('.registrate'), new_user_registration_path %> | 
         <%= link_to t('.login'), user_session_path %>
-      </p>
-    <% end %>
-  </span>
+      </p>   
+    </span>
+  <% end %>
 </nav>
