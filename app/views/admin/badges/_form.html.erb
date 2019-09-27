@@ -1,0 +1,22 @@
+<%= form_with model: [:admin, @badge], local: true do |badge| %>
+  <div class="row text-left">
+    <div class="col">
+      <%= render "devise/shared/error_messages", resource: @badge %>
+    </div>
+  </div>
+
+  <div class="field mt-3"> 
+    <%= badge.label :title %>
+    <%= badge.text_field :title, id: :badge_title %>
+  </div>
+
+  <div class="field mt-3">
+    <%= badge.label :description %>
+    <%= badge.text_area :description, id: :badge_description %>
+  </div>
+
+  <div class="actions mt-3">
+    <%= badge.submit %>
+  </div>
+<% end %>
+<br>
