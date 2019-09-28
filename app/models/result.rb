@@ -1,7 +1,7 @@
 class Result < ApplicationRecord
   belongs_to :user
   belongs_to :test
-  belongs_to :badge
+  belongs_to :badge, optional: true
   belongs_to :current_question, class_name: "Question", optional: true
 
   before_validation :before_validation_set_current_question
@@ -49,7 +49,7 @@ class Result < ApplicationRecord
     if new_record?
       self.current_question = test.questions.first if test.present?
     else
-      self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
+      self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first unless current_question.nil?
     end
   end
 end

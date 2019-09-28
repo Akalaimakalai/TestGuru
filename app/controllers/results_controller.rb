@@ -11,6 +11,15 @@ class ResultsController < ApplicationController
     @result.accept!(params[:answer_ids])
 
     if @result.completed?
+      Badge.all.each do |b|
+        badge = b.check(@result)
+
+        if !badge.nil?
+          @result.update!(badge_id: badge)
+          break
+        end
+      end
+
       TestsMailer.completed_test(@result).deliver_now
       redirect_to final_result_path(@result)
     else
@@ -29,7 +38,8 @@ class ResultsController < ApplicationController
       @gist.save
 
       flash[:success] = "#{t('.success')} #{view_context.link_to t('.here'),
-                                            result.html_url, target: "_blank"}"
+                                            result.html_url,
+                                            target: "_blank"}"
     else
       flash[:alert] = t('.failure')
     end
