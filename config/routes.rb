@@ -22,7 +22,10 @@ Rails.application.routes.draw do
   end
 
   resources :feedbacks, only: %i[ new create ]
-  resources :badges, only: %i[ index ]
+  scope '/gurus' do
+    resources :badges, only: %i[ index ]
+    get '/badges_all', to: 'badges#index_all'
+  end
 
   namespace :admin do
     resources :tests do

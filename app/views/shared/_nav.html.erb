@@ -13,7 +13,7 @@
         <%= link_to 'обратная связь', new_feedback_path, class: "text-primary" %>
       <% end %>
       <br>
-      <%= link_to 'медальки', badges_path %>
+      <%= link_to 'медальки', badges_all_path %>
       <br>
       <%= link_to t('.logout'), destroy_user_session_path,
                                 method: :delete,
