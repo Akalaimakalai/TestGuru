@@ -7,6 +7,12 @@ class Badge < ApplicationRecord
   validates :title, uniqueness: true
   validates :description, presence: true
 
+  def conditions
+    [
+      [ "Пройти все тесты категории: ", "category_complited" ]
+    ]
+  end
+
   def check(result)
     send(condition, result)
   end
@@ -28,7 +34,7 @@ class Badge < ApplicationRecord
     check_list = []
 
     tests_ids.each do |t|
-      check_list << t if ((successes.include?(t)) && (!check_list.include?(t)))
+      check_list << t if successes.include?(t) && !check_list.include?(t)
     end
 
     id if check_list == tests_ids
