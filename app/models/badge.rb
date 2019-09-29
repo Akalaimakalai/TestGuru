@@ -20,4 +20,17 @@ class Badge < ApplicationRecord
   def first_fail(result)
     id if (result.user.results.count <= 1) && (result.pass? == false)
   end
+
+  def category_complited(result)
+    successes = result.user.results.where(percent: 85.0..100.0).pluck(:test_id)
+    category_id = Category.find_by(title: "Крылатые фразы").id
+    tests_ids = Test.where(category_id: category_id).pluck(:id)
+    check_list = []
+
+    tests_ids.each do |t|
+      check_list << t if ((successes.include?(t)) && (!check_list.include?(t)))
+    end
+
+    id if check_list == tests_ids
+  end
 end
