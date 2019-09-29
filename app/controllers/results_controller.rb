@@ -14,7 +14,7 @@ class ResultsController < ApplicationController
       Badge.all.each do |b|
         badge = b.check(@result)
 
-        if !badge.nil?
+        unless badge.nil?
           @result.update!(badge_id: badge)
           break
         end

@@ -10,6 +10,7 @@ class Result < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.percent = calculate_result
 
     save!
   end
