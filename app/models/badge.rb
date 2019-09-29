@@ -28,8 +28,9 @@ class Badge < ApplicationRecord
   end
 
   def category_complited(result)
+    category_id = additional_condition.to_i
+    return nil if result.test.category_id != category_id
     successes = result.user.results.where(percent: 85.0..100.0).pluck(:test_id)
-    category_id = Category.find_by(title: "Крылатые фразы").id
     tests_ids = Test.where(category_id: category_id).pluck(:id)
     check_list = []
 
