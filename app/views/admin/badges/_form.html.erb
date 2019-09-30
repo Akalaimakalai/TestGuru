@@ -21,6 +21,11 @@
   </div>
 
   <div class="field mt-3">
+    <%= badge.label :level %>
+    <%= badge.number_field :additional_condition, id: :badge_additional_condition %>
+  </div>
+
+  <div class="field mt-3">
     <%= badge.label :description %>
     <%= badge.text_area :description, id: :badge_description %>
   </div>

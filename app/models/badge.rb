@@ -9,7 +9,8 @@ class Badge < ApplicationRecord
 
   def conditions
     [
-      [ "Пройти все тесты категории: ", "category_complited" ]
+      [ "Пройти все тесты категории: ", "category_complited" ],
+      [ "Пройти все тесты уровня: ", "level_complited" ]
     ]
   end
 
@@ -32,6 +33,19 @@ class Badge < ApplicationRecord
     return nil if result.test.category_id != category_id
     successes = result.user.results.where(percent: 85.0..100.0).pluck(:test_id)
     tests_ids = Test.where(category_id: category_id).pluck(:id)
+    check_list = []
+
+    tests_ids.each do |t|
+      check_list << t if successes.include?(t) && !check_list.include?(t)
+    end
+
+    id if check_list == tests_ids
+  end
+
+  def level_complited(result)
+    lvl = additional_condition.to_i
+    successes = result.user.results.where(percent: 85.0..100.0).pluck(:test_id)
+    tests_ids = Test.where(level: lvl).pluck(:id)
     check_list = []
 
     tests_ids.each do |t|
