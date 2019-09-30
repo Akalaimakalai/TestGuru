@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_29_205555) do
+ActiveRecord::Schema.define(version: 2019_09_30_221528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "achievements", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "badge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["badge_id"], name: "index_achievements_on_badge_id"
+    t.index ["user_id"], name: "index_achievements_on_user_id"
+  end
 
   create_table "answers", force: :cascade do |t|
     t.text "body", null: false
@@ -67,9 +76,7 @@ ActiveRecord::Schema.define(version: 2019_09_29_205555) do
     t.datetime "updated_at", null: false
     t.integer "correct_questions", default: 0
     t.bigint "current_question_id"
-    t.bigint "badge_id"
     t.float "percent"
-    t.index ["badge_id"], name: "index_results_on_badge_id"
     t.index ["current_question_id"], name: "index_results_on_current_question_id"
     t.index ["test_id"], name: "index_results_on_test_id"
     t.index ["user_id"], name: "index_results_on_user_id"

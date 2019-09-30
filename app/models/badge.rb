@@ -1,7 +1,7 @@
 class Badge < ApplicationRecord
 
-  has_many :results
-  has_many :users, through: :results
+  has_many :achievements, dependent: :destroy
+  has_many :users, through: :achievements
 
   validates :title, presence: true
   validates :title, uniqueness: true

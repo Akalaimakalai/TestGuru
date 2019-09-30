@@ -14,10 +14,7 @@ class ResultsController < ApplicationController
       Badge.all.each do |b|
         badge = b.check(@result)
 
-        unless badge.nil?
-          @result.update!(badge_id: badge)
-          break
-        end
+        Achievement.create!(user_id: @result.user_id, badge_id: badge) unless badge.nil?
       end
 
       TestsMailer.completed_test(@result).deliver_now
