@@ -7,4 +7,6 @@ class BadgesController < ApplicationController
   def index_all
     @badges = Badge.all
   end
+
+  def show; end
 end

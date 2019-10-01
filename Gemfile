@@ -37,8 +37,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # My gems
-gem 'pg'
+gem 'pg' # PosgreSQL
 gem "nokogiri", ">= 1.10.4"
+gem 'image_processing', '~> 1.2' # images size
 
 # AUTH
 gem "devise", ">= 4.7.1"

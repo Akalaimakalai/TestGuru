@@ -11,6 +11,11 @@
   </div>
 
   <div class="field mt-3"> 
+    <%= badge.label :image %>
+    <%= badge.file_field :image, id: :badge_image %>
+  </div>
+
+  <div class="field mt-3"> 
     <%= badge.label :condition %>
     <%= badge.select :condition, @badge.conditions %>
   </div>

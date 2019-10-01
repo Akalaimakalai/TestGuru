@@ -10,6 +10,7 @@ class Admin::BadgesController < Admin::BaseController
     @badge = Badge.new(badge_params)
 
     if @badge.save
+      @badge.image.attach(params[:badge][:image])
       redirect_to admin_badge_path(@badge), notice: "Badge created"
     else
       render :new

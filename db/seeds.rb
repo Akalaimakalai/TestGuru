@@ -19,12 +19,12 @@ tests = Test.create!([
 
 puts "Created: #{tests}"
 
-badges = Badge.create!([
-  { title: "Многообещающее начало", description: "Успешно сдать свой первый тест", condition: "first_success" },
-  { title: "Первый блин", description: "Благополучно завалить свой первый тест", condition: "first_fail" }
-])
+# badges = Badge.create!([
+#   { title: "Многообещающее начало", description: "Успешно сдать свой первый тест", condition: "first_success" },
+#   { title: "Первый блин", description: "Благополучно завалить свой первый тест", condition: "first_fail" }
+# ])
 
-puts "Created: #{badges}"
+# puts "Created: #{badges}"
 
 questions = Question.create!([
   { body: 'Продолжите фразу: "Жизнь "', test: tests[0] },
