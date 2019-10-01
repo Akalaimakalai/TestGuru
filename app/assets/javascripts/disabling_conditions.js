@@ -9,19 +9,22 @@ document.addEventListener('turbolinks:load', function() {
 function DisableField() {
   var choice = this.value;
   var categories = document.querySelector('.categories_list');
-  var levles = document.querySelector('.levels_list');
+  var levels = document.querySelector('.levels_list');
+  var category = categories.querySelector('select[name="badge[additional_condition]"]');
+  var level = levels.querySelector('input[name="badge[additional_condition]"]');
+
 
 
   if (choice == "category_complited") {
-    categories.setAttribute('disabled', false);
+    category.removeAttribute("disabled");
     categories.classList.remove('hide');
-    levles.setAttribute('disabled', true);
-    levles.classList.add('hide');
+    level.setAttribute('disabled', true);
+    levels.classList.add('hide');
   } else { if (choice == "level_complited") {
-    categories.setAttribute('disabled', true);
+    category.setAttribute('disabled', true);
     categories.classList.add('hide');
-    levles.setAttribute('disabled', false);
-    levles.classList.remove('hide');
+    level.removeAttribute("disabled");
+    levels.classList.remove('hide');
     };
   };
 };
