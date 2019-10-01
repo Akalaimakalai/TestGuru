@@ -15,12 +15,12 @@
     <%= badge.select :condition, @badge.conditions %>
   </div>
 
-  <div class="field mt-3">
+  <div class="field mt-3 categories_list hide" disabled="true">
     <%= badge.label :category %>:
     <%= badge.collection_select :additional_condition, Category.all, :id, :title, prompt: true %>
   </div>
 
-  <div class="field mt-3">
+  <div class="field mt-3 levels_list hide" disabled="true">
     <%= badge.label :level %>
     <%= badge.number_field :additional_condition, id: :badge_additional_condition %>
   </div>
