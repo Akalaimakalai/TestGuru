@@ -11,11 +11,7 @@ class ResultsController < ApplicationController
     @result.accept!(params[:answer_ids])
 
     if @result.completed?
-      Badge.all.each do |b|
-        badge = b.check(@result)
-
-        Achievement.create!(user_id: @result.user_id, badge_id: badge) unless badge.nil?
-      end
+      BadgeService.new(@result).start_checking
 
       TestsMailer.completed_test(@result).deliver_now
       redirect_to final_result_path(@result)

@@ -5,6 +5,8 @@ class Result < ApplicationRecord
 
   before_validation :before_validation_set_current_question
 
+  scope :successes, -> { where(percent: 85.0..100.0) }
+
   attr_reader :q_number
 
   def accept!(answer_ids)
