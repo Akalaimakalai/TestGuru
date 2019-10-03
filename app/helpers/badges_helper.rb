@@ -2,22 +2,15 @@ module BadgesHelper
 
   def description(badge)
 
-    descriptions = {
-      category_complited: "Пройти все тесты категории:",
-      level_complited: "Пройти все тесты уровня:",
-      first_success: "Успешно сдать свой первый тест",
-      first_fail: "Благополучно завалить свой первый тест"
-    }
-
-    first = badge.condition.to_sym
+    first = badge.condition
     second = badge.additional_condition.to_i
 
-    if first == :category_complited
-      "#{ descriptions[first] } #{ Category.find(second).title }"
-    elsif first == :level_complited
-      "#{ descriptions[first] } #{ second }"
+    if first == "category_complited?"
+      I18n.t(".#{first}", additional: Category.find(second).title)
+    elsif first == "level_complited?"
+      I18n.t(".#{first}", additional: second)
     else
-      "#{ descriptions[first] }"
+      I18n.t(".#{first}")
     end
   end
 end

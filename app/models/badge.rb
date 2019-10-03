@@ -6,13 +6,14 @@ class Badge < ApplicationRecord
 
   validates :title, presence: true
   validates :title, uniqueness: true
-
+  validates :condition, presence: true
+  
   def conditions
     [
-      [ "Пройти все тесты категории: ", "category_complited" ],
-      [ "Пройти все тесты уровня: ", "level_complited" ],
-      [ "Сдать первый тест", "first_success" ],
-      [ "Завалить первый тест", "first_fail" ]
+      [ I18n.t(".category_complited?", additional: nil), "category_complited?" ],
+      [ I18n.t(".level_complited?", additional: nil), "level_complited?" ],
+      [ I18n.t(".first_success?"), "first_success?" ],
+      [ I18n.t(".first_fail?"), "first_fail?" ]
     ]
   end
 end

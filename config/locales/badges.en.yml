@@ -1,0 +1,6 @@
+en:
+  admin:
+    badges:
+      show:
+        category_completed?: "Complete all tests from category: %{category_title}"
+        level_completed?: "Complete all tests by level: %{category_title}"

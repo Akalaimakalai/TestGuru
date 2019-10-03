@@ -1,0 +1,6 @@
+ru:
+  admin:
+    badges:
+      show:
+        category_complited?: "Успешно пройдите все тесты категории: %{additional}"
+        level_complited?: "Успешно пройдите все тесты уровня: %{additional}"

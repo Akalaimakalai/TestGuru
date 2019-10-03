@@ -11,8 +11,7 @@ class ResultsController < ApplicationController
     @result.accept!(params[:answer_ids])
 
     if @result.completed?
-      BadgeService.new(@result).start_checking
-
+      current_user.badges << BadgeService.new(@result).start_checking
       TestsMailer.completed_test(@result).deliver_now
       redirect_to final_result_path(@result)
     else

@@ -15,15 +15,20 @@ function DisableField() {
 
 
 
-  if (choice == "category_complited") {
+  if (choice == "category_complited?") {
     category.removeAttribute("disabled");
     categories.classList.remove('hide');
     level.setAttribute('disabled', true);
     levels.classList.add('hide');
-  } else if (choice == "level_complited") {
+  } else if (choice == "level_complited?") {
     category.setAttribute('disabled', true);
     categories.classList.add('hide');
     level.removeAttribute("disabled");
     levels.classList.remove('hide');
-  };
+  } else {
+    category.setAttribute('disabled', true);
+    categories.classList.add('hide');
+    level.setAttribute("disabled", true);
+    levels.classList.add('hide');
+  }
 };
