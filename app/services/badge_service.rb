@@ -1,5 +1,11 @@
 class BadgeService
 
+  CONDITIONS = [ "category_complited?",
+                 "level_complited?",
+                 "first_success?",
+                 "first_fail?"
+  ]
+
   def initialize(result)
     @result = result
     @results = result.user.results
