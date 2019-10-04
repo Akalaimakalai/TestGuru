@@ -1,11 +1,9 @@
 module BadgesHelper
 
   def conditions
-    collection = []
-    BadgeService::CONDITIONS.each do |condition|
-      collection << [ I18n.t(".#{condition}", additional: nil), condition ]
+    BadgeService::CONDITIONS.map do |condition|
+      [ I18n.t(".#{condition}", additional: nil), condition ]
     end
-    collection
   end
 
   def description(badge)

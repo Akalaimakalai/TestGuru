@@ -43,13 +43,7 @@ class BadgeService
 
   def additional_comleted?(tests)
     tests_ids = tests.ids
-    successes_ids = @results.successes.pluck(:test_id).uniq
-    check_list = []
-
-    tests_ids.each do |t|
-      check_list << t if successes_ids.include?(t)
-    end
-
-    check_list == tests_ids
+    successes_ids = @results.successes.where(test_id: tests.ids).pluck(:test_id).uniq
+    successes_ids == tests_ids
   end
 end
