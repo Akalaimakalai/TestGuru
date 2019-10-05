@@ -31,6 +31,10 @@
 
 en:
   hello: "Hello world"
+  category_completed?: "Complete all tests from category: %{category_title}"
+  level_completed?: "Complete all tests by level: %{category_title}"
+  first_success?: "Pass your first test successfully"
+  first_fail?: "Fail your first test"
 
   users:
     sessions:

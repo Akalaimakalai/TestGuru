@@ -19,12 +19,6 @@ tests = Test.create!([
 
 puts "Created: #{tests}"
 
-results = Result.create!([
-  { user: users[0], test: tests[0] }
-])
-
-puts "Created: #{results}"
-
 questions = Question.create!([
   { body: 'Продолжите фразу: "Жизнь "', test: tests[0] },
   { body: '"Я не боюсь того, кто издал 10000 игр я боюсь того, кто переиздал одну игру 10000 раз". О ком это?',

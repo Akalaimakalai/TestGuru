@@ -1,0 +1,37 @@
+<%= form_with model: [:admin, @badge], local: true do |badge| %>
+  <div class="row text-left">
+    <div class="col">
+      <%= render "devise/shared/error_messages", resource: @badge %>
+    </div>
+  </div>
+
+  <div class="field mt-3"> 
+    <%= badge.label :title %>
+    <%= badge.text_field :title, id: :badge_title %>
+  </div>
+
+  <div class="field mt-3"> 
+    <%= badge.label :image %>
+    <%= badge.file_field :image, id: :badge_image %>
+  </div>
+
+  <div class="field mt-3"> 
+    <%= badge.label :condition %>
+    <%= badge.select :condition, conditions %>
+  </div>
+
+  <div class="field mt-3 categories_list hide">
+    <%= badge.label :category %>:
+    <%= badge.collection_select :additional_condition, Category.all, :id, :title, prompt: true %>
+  </div>
+
+  <div class="field mt-3 levels_list hide">
+    <%= badge.label :level %>
+    <%= badge.number_field :additional_condition, id: :badge_additional_condition %>
+  </div>
+
+  <div class="actions mt-3">
+    <%= badge.submit %>
+  </div>
+<% end %>
+<br>

@@ -11,6 +11,7 @@ class ResultsController < ApplicationController
     @result.accept!(params[:answer_ids])
 
     if @result.completed?
+      current_user.badges << BadgeService.new(@result).start_checking
       TestsMailer.completed_test(@result).deliver_now
       redirect_to final_result_path(@result)
     else
@@ -29,7 +30,8 @@ class ResultsController < ApplicationController
       @gist.save
 
       flash[:success] = "#{t('.success')} #{view_context.link_to t('.here'),
-                                            result.html_url, target: "_blank"}"
+                                            result.html_url,
+                                            target: "_blank"}"
     else
       flash[:alert] = t('.failure')
     end

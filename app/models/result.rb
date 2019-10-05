@@ -5,10 +5,13 @@ class Result < ApplicationRecord
 
   before_validation :before_validation_set_current_question
 
+  scope :successes, -> { where(percent: 85.0..100.0) }
+
   attr_reader :q_number
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.percent = calculate_result
 
     save!
   end
@@ -48,7 +51,7 @@ class Result < ApplicationRecord
     if new_record?
       self.current_question = test.questions.first if test.present?
     else
-      self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
+      self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first unless current_question.nil?
     end
   end
 end

@@ -17,7 +17,7 @@ function conpareInput() {
     mainCheck.classList.add('hide');
     subCheck.classList.add('hide');
     subCircleSlash.classList.add('hide');
-  } else { if (sub != main) {
+  } else if (sub != main) {
     mainCheck.classList.add('hide');
     subCheck.classList.add('hide');
     subCircleSlash.classList.remove('hide');
@@ -25,5 +25,5 @@ function conpareInput() {
     mainCheck.classList.remove('hide');
     subCheck.classList.remove('hide');
     subCircleSlash.classList.add('hide');
-  }}
+  }
 }
