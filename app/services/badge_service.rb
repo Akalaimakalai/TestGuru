@@ -12,11 +12,7 @@ class BadgeService
   end
 
   def start_checking
-    badges = []
-    Badge.all.each do |b|
-      badges << b if self.send(b.condition, b)
-    end
-    badges
+    Badge.all.select { |b| send(b.condition, b) }
   end
 
   private
