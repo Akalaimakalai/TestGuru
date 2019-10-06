@@ -4,6 +4,7 @@ class Result < ApplicationRecord
   belongs_to :current_question, class_name: "Question", optional: true
 
   before_validation :before_validation_set_current_question
+  before_validation :before_validation_set_duration
 
   scope :successes, -> { where(percent: 85.0..100.0) }
 
@@ -53,5 +54,9 @@ class Result < ApplicationRecord
     else
       self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
     end
+  end
+
+  def before_validation_set_duration
+    self.duration ||= Time.now + (self.test.timer * 60) if self.test.timer
   end
 end

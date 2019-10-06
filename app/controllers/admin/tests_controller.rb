@@ -59,7 +59,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:category_id, :title, :level, :author_id)
+    params.require(:test).permit(:category_id, :title, :level, :author_id, :timer)
   end
 
   def update_inline_redirect
