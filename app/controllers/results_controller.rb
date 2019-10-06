@@ -1,7 +1,7 @@
 class ResultsController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_result, only: %i[ show update final gist set_timer ]
+  before_action :set_result, only: %i[ show update final gist ]
 
   def show; end
 
@@ -13,6 +13,10 @@ class ResultsController < ApplicationController
     if @result.completed?
       current_user.badges << BadgeService.new(@result).start_checking
       TestsMailer.completed_test(@result).deliver_now
+      redirect_to final_result_path(@result)
+    elsif @result.overtime?
+      TestsMailer.completed_test(@result).deliver_now
+      flash[:alert] = "Время вышло"
       redirect_to final_result_path(@result)
     else
       render :show

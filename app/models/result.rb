@@ -25,6 +25,10 @@ class Result < ApplicationRecord
     calculate_result >= 85
   end
 
+  def overtime?
+    Time.now >= duration
+  end
+
   def set_q_number
     @q_number = test.questions.count - test.questions.order(:id).where('id > ?', current_question.id).count
   end

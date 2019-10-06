@@ -31,8 +31,8 @@ function initializeClock(id, endtime){
   var timeinterval = setInterval(function(){
    var t = getTimeRemaining(endtime);
    clock.innerHTML = + t.minutes + ':' + t.seconds;
-   if(t.total<=0){
-    document.querySelector('.red_button').click();
+   if(t.total < 0){
+    document.querySelector('form.answers').submit();
    }
   },1000);
 }

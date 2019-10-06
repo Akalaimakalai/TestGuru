@@ -4,7 +4,6 @@
 
     <div id="timer2">
       Время на тест: <div id="clockdiv" data-duration="<%= @result.duration %>"></div>
-      <%= link_to 'final', final_result_path(@result), class: "red_button hide" %>
     </div>
 
     <% @result.set_q_number %>
@@ -23,7 +22,7 @@
     </b>
 
     <div class="row justify-content-left mt-3 text-left">
-      <%= form_with url: result_path(@result), local: true, method: :put do |form| %>
+      <%= form_with url: result_path(@result), local: true, method: :put, class: "answers" do |form| %>
         <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id,
                                         :body, include_hidden: false do |b| %>
           <p>
