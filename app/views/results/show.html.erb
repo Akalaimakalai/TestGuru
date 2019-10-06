@@ -2,6 +2,11 @@
   <div class="col col-md-4">
     <h2><%= t('.header', test_title: @result.test.title) %></h2>
 
+    <div>
+      Время на тест: <%= content_tag :span, "", id: "timer", data: { duration: 5 } %>
+      <%= link_to 'final', final_result_path(@result), class: "red-button hide" %>
+    </div>
+
     <% @result.set_q_number %>
 
     <b>

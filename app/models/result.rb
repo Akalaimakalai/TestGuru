@@ -51,7 +51,7 @@ class Result < ApplicationRecord
     if new_record?
       self.current_question = test.questions.first if test.present?
     else
-      self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first unless current_question.nil?
+      self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
     end
   end
 end
