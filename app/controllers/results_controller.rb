@@ -13,10 +13,7 @@ class ResultsController < ApplicationController
     if @result.completed?
       current_user.badges << BadgeService.new(@result).start_checking
       TestsMailer.completed_test(@result).deliver_now
-      redirect_to final_result_path(@result)
-    elsif @result.overtime?
-      TestsMailer.completed_test(@result).deliver_now
-      flash[:alert] = "Время вышло"
+      flash[@result.flash_type.to_sym] = @result.flash_message if @result.flash_message
       redirect_to final_result_path(@result)
     else
       render :show

@@ -8,11 +8,17 @@ class Result < ApplicationRecord
 
   scope :successes, -> { where(percent: 85.0..100.0) }
 
-  attr_reader :q_number
+  attr_reader :q_number, :flash_type, :flash_message
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     self.percent = calculate_result
+
+    if duration && Time.now >= duration
+      current_question = nil
+      @flash_type = "alert"
+      @flash_message = "Время вышло"
+    end
 
     save!
   end
@@ -23,10 +29,6 @@ class Result < ApplicationRecord
 
   def pass?
     calculate_result >= 85
-  end
-
-  def overtime?
-    Time.now >= duration
   end
 
   def set_q_number
@@ -56,7 +58,7 @@ class Result < ApplicationRecord
     if new_record?
       self.current_question = test.questions.first if test.present?
     else
-      self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
+      self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first unless current_question.nil?
     end
   end
 
