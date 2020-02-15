@@ -2,6 +2,10 @@
   <div class="col col-md-4">
     <h2><%= t('.header', test_title: @result.test.title) %></h2>
 
+    <div id="timer2">
+      Время на тест: <div id="clockdiv" data-duration="<%= @result.duration %>"></div>
+    </div>
+
     <% @result.set_q_number %>
 
     <b>
@@ -18,7 +22,7 @@
     </b>
 
     <div class="row justify-content-left mt-3 text-left">
-      <%= form_with url: result_path(@result), local: true, method: :put do |form| %>
+      <%= form_with url: result_path(@result), local: true, method: :put, class: "answers" do |form| %>
         <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id,
                                         :body, include_hidden: false do |b| %>
           <p>

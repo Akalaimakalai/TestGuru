@@ -4,14 +4,21 @@ class Result < ApplicationRecord
   belongs_to :current_question, class_name: "Question", optional: true
 
   before_validation :before_validation_set_current_question
+  before_validation :before_validation_set_duration
 
   scope :successes, -> { where(percent: 85.0..100.0) }
 
-  attr_reader :q_number
+  attr_reader :q_number, :flash_type, :flash_message
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     self.percent = calculate_result
+
+    if duration && Time.now >= duration
+      current_question = nil
+      @flash_type = "alert"
+      @flash_message = "Время вышло"
+    end
 
     save!
   end
@@ -53,5 +60,9 @@ class Result < ApplicationRecord
     else
       self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first unless current_question.nil?
     end
+  end
+
+  def before_validation_set_duration
+    self.duration ||= Time.now + (self.test.timer * 60) if self.test.timer
   end
 end
